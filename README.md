@@ -6,16 +6,10 @@ Open the "minesweeper" app in the file.
 **SCREEN OF THE GAME:**
 
 
-![Image](https://github.com/users/Liko0o0/projects/1/assets/150863666/448ce9df-08fa-4c96-bb50-2ce82cc3aa44)
+![minesweeper 1](https://github.com/Liko0o0/Demineur/assets/150863666/a3195b8e-ffb9-4016-befb-a3c8bb2014bf)
 
+![Minesweeper 2](https://github.com/Liko0o0/Demineur/assets/150863666/511f39f4-33b2-4dfa-88ae-5787d8de44b3)
 
+![Minesweeper 3](https://github.com/Liko0o0/Demineur/assets/150863666/15a48668-204e-41f3-9031-1a63e052fcd6)
 
-![Image](https://github.com/users/Liko0o0/projects/1/assets/150863666/9ad6b8cb-d59d-42ca-ac4b-8055a1416acf)
-
-
-
-![Image](https://github.com/users/Liko0o0/projects/1/assets/150863666/f6a5c5d6-230c-438c-864c-81ca5e6ac764)
-
-
-
-![Image](https://github.com/users/Liko0o0/projects/1/assets/150863666/8b7b948c-3c83-450b-8edb-7b3ce35e6396)
+![Minesweeper 4](https://github.com/Liko0o0/Demineur/assets/150863666/ed355553-7f81-494b-9677-f2018f5554c0)
