@@ -1,11 +1,11 @@
 A minesweeper game written in python using tkinter (Only in French for now).
 
 **HOW TO RUN THE GAME:**
-Install the files and
-open "minesweeper.EXE" in the file.
+Install the latest realese and
+open "minesweeper.EXE".
 
 
-**SCREEN OF THE GAME:**
+**SCREENS OF THE GAME:**
 
 
 ![minesweeper 1](https://github.com/Liko0o0/Minesweeper---Python-Tkinter/assets/150863666/d9aadc5f-b712-4351-a229-e0626b97e038)
