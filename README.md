@@ -1,4 +1,4 @@
-# MINESWEEPER GAME
+# MINESWEEPER GAME 👾
 
 A minesweeper game written in python using tkinter (Only in French for now).
 
