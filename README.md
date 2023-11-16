@@ -1,6 +1,6 @@
 **HOW TO RUN THE GAME:**
-Install the files
-Open the "minesweeper" app in the file.
+Install the files and
+open the "minesweeper" app in the file.
 
 
 **SCREEN OF THE GAME:**
