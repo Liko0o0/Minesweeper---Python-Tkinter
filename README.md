@@ -1,7 +1,7 @@
 A minesweeper game written in python using tkinter (Only in French for now).
 
 **HOW TO RUN THE GAME:**
-Install the latest realese and
+Install the latest release and
 open "minesweeper.EXE".
 
 
