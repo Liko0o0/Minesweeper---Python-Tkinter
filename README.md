@@ -1,3 +1,7 @@
+#MINESWEEPER GAME
+
+##Using python and tkinter
+
 A minesweeper game written in python using tkinter (Only in French for now).
 
 **HOW TO RUN THE GAME:**
