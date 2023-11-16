@@ -1,12 +1,10 @@
 # MINESWEEPER GAME
 
-### Using python and tkinter
-
 A minesweeper game written in python using tkinter (Only in French for now).
 
 ## **HOW TO RUN THE GAME:**
-- Install the latest release and
-open "minesweeper.EXE".
+- Install the latest release
+- open "minesweeper.EXE"
 
 
 ## **SCREENS OF THE GAME:**
