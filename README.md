@@ -2,7 +2,7 @@
 
 # 📜 Table of Contents
 
-- [About the Project](https://github.com/Liko0o0/Minesweeper---Python-Tkinter#book-about-the-project)
+- [About the Project](https://github.com/Liko0o0/Minesweeper---Python-Tkinter#-about-the-project)
 - [Run the game](https://github.com/Liko0o0/Minesweeper---Python-Tkinter#toolbox-how-to-run-the-game)
 - [Version history](https://github.com/Liko0o0/Minesweeper---Python-Tkinter#gear-version-history)
 - [Roadmap](https://github.com/Liko0o0/Minesweeper---Python-Tkinter#compass-roadmap)
