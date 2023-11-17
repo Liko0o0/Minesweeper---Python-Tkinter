@@ -1,13 +1,25 @@
-# MINESWEEPER GAME 👾
+# 👾 MINESWEEPER GAME 👾
 
-A minesweeper game written in python using tkinter (Only in French for now).
+## About the Project
+### A minesweeper game written in python using tkinter (Only in French for now).
+- ### **Features :**
+    - **Various levels of difficulties**
+    - **Ranking of the best times**
+    - **Achievements**
 
 ## **HOW TO RUN THE GAME:**
-- Install the latest release
-    - open "minesweeper.EXE" 
-> _(You may receive a warning from windows due to the .EXE)_
+- **Download the latest release**
+    - **Open "minesweeper.EXE"**
+> _( You may receive a warning from windows due to the .EXE )_
 
+## Version History
+- **V1.0.0**
+    - Initial release
 
+## Roadmap
+* [ ] Option to switch on english/french language
+* [ ] Option to mute sounds and musics
+      
 ## **SCREENS OF THE GAME:**
 
 
