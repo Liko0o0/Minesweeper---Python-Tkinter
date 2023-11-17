@@ -26,7 +26,7 @@
     - Initial release
 
 ## 🧭 Roadmap
-* [ ] Option to switch to English/French language
+* [ ] Option to switch between English and French language
 * [ ] Option to mute sounds and musics
       
 ## 📸 Screens of the game
@@ -49,4 +49,6 @@ Useful resources and libraries used in the project.
  - [Tkinter](https://docs.python.org/3/library/tkinter.html)
  - [PyGame(Mixer)](https://www.pygame.org/docs/ref/mixer.html)
  - [PyInstaller](https://pyinstaller.org/en/stable/)
+
+
    
