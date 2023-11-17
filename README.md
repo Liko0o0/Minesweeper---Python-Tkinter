@@ -1,5 +1,14 @@
 # 👾 MINESWEEPER GAME 👾
 
+# Table of Contents
+
+- [About the Project](https://github.com/Liko0o0/Minesweeper---Python-Tkinter#about-the-project)
+- [Run the game](https://github.com/Liko0o0/Minesweeper---Python-Tkinter#how-to-run-the-game)
+- [Version history](https://github.com/Liko0o0/Minesweeper---Python-Tkinter#version-history)
+- [Roadmap](https://github.com/Liko0o0/Minesweeper---Python-Tkinter#roadmap)
+- [Screens of the game](https://github.com/Liko0o0/Minesweeper---Python-Tkinter#screens-of-the-game)
+- [Acknowledgements](https://github.com/Liko0o0/Minesweeper---Python-Tkinter#acknowledgements)
+  
 ## About the Project
 ### A minesweeper game written in python using tkinter (Only in French for now).
 - ### **Features :**
@@ -17,7 +26,7 @@
     - Initial release
 
 ## Roadmap
-* [ ] Option to switch on english/french language
+* [ ] Option to switch to English/French language
 * [ ] Option to mute sounds and musics
       
 ## **SCREENS OF THE GAME:**
@@ -32,3 +41,12 @@
 ![Minesweeper 3](https://github.com/Liko0o0/Minesweeper---Python-Tkinter/assets/150863666/bee25b11-056d-42c5-aba7-3338657c6b48)
 
 ![Minesweeper 4](https://github.com/Liko0o0/Minesweeper---Python-Tkinter/assets/150863666/631df364-24d6-43e5-a8b9-b53cdfb24f7e)
+
+## Acknowledgements
+
+Useful resources and libraries used in the project.
+
+ - [Tkinter](https://docs.python.org/3/library/tkinter.html)
+ - [PyGame(Mixer)](https://www.pygame.org/docs/ref/mixer.html)
+ - [PyInstaller](https://pyinstaller.org/en/stable/)
+   
