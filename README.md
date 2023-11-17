@@ -3,11 +3,11 @@
 # 📜 Table of Contents
 
 - [About the Project](https://github.com/Liko0o0/Minesweeper---Python-Tkinter#-about-the-project)
-- [Run the game](https://github.com/Liko0o0/Minesweeper---Python-Tkinter#toolbox-how-to-run-the-game)
-- [Version history](https://github.com/Liko0o0/Minesweeper---Python-Tkinter#gear-version-history)
-- [Roadmap](https://github.com/Liko0o0/Minesweeper---Python-Tkinter#compass-roadmap)
-- [Screens of the game](https://github.com/Liko0o0/Minesweeper---Python-Tkinter#camera_flash-screens-of-the-game)
-- [Acknowledgements](https://github.com/Liko0o0/Minesweeper---Python-Tkinter#books-acknowledgements)
+- [Run the game](https://github.com/Liko0o0/Minesweeper---Python-Tkinter#-how-to-run-the-game)
+- [Version history](https://github.com/Liko0o0/Minesweeper---Python-Tkinter#%EF%B8%8F-version-history)
+- [Roadmap](https://github.com/Liko0o0/Minesweeper---Python-Tkinter#-roadmap)
+- [Screens of the game](https://github.com/Liko0o0/Minesweeper---Python-Tkinter#-screens-of-the-game)
+- [Acknowledgements](https://github.com/Liko0o0/Minesweeper---Python-Tkinter#-acknowledgements)
   
 ## 📖 About the Project
 ### A minesweeper game written in python using tkinter (Only in French for now).
