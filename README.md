@@ -4,7 +4,7 @@ A minesweeper game written in python using tkinter (Only in French for now).
 
 ## **HOW TO RUN THE GAME:**
 - Install the latest release
-- open "minesweeper.EXE"(You may receive a warning from windows due to the .EXE)
+ - open "minesweeper.EXE" _(You may receive a warning from windows due to the .EXE)_
 
 
 ## **SCREENS OF THE GAME:**
