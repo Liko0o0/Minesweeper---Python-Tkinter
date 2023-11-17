@@ -10,7 +10,7 @@
 - [Acknowledgements](https://github.com/Liko0o0/Minesweeper---Python-Tkinter#-acknowledgements)
   
 ## 📖 About the Project
-### A minesweeper game written in python using tkinter (Only in French for now).
+### A minesweeper game written in Python using Tkinter (Only in French for now).
 - ### **Features :**
     - **Various levels of difficulties**
     - **Ranking of the best times**
@@ -19,7 +19,7 @@
 ## 🧰 How to run the game
 - **Download the latest release**
     - **Open "minesweeper.EXE"**
-> _( You may receive a warning from windows due to the .EXE )_
+> _( You may receive a warning from windows due to the .EXE type )_
 
 ## ⚙️ Version History
 - **V1.0.0**
@@ -44,7 +44,7 @@
 
 ## 📚 Acknowledgements
 
-Useful resources and libraries used in the project.
+### Useful resources and libraries used in the project.
 
  - [Tkinter](https://docs.python.org/3/library/tkinter.html)
  - [PyGame(Mixer)](https://www.pygame.org/docs/ref/mixer.html)
