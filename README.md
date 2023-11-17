@@ -1,35 +1,35 @@
 # 👾 MINESWEEPER GAME 👾
 
-# Table of Contents
+# 📜 Table of Contents
 
-- [About the Project](https://github.com/Liko0o0/Minesweeper---Python-Tkinter#about-the-project)
-- [Run the game](https://github.com/Liko0o0/Minesweeper---Python-Tkinter#how-to-run-the-game)
-- [Version history](https://github.com/Liko0o0/Minesweeper---Python-Tkinter#version-history)
-- [Roadmap](https://github.com/Liko0o0/Minesweeper---Python-Tkinter#roadmap)
-- [Screens of the game](https://github.com/Liko0o0/Minesweeper---Python-Tkinter#screens-of-the-game)
-- [Acknowledgements](https://github.com/Liko0o0/Minesweeper---Python-Tkinter#acknowledgements)
+- [About the Project](https://github.com/Liko0o0/Minesweeper---Python-Tkinter#book-about-the-project)
+- [Run the game](https://github.com/Liko0o0/Minesweeper---Python-Tkinter#toolbox-how-to-run-the-game)
+- [Version history](https://github.com/Liko0o0/Minesweeper---Python-Tkinter#gear-version-history)
+- [Roadmap](https://github.com/Liko0o0/Minesweeper---Python-Tkinter#compass-roadmap)
+- [Screens of the game](https://github.com/Liko0o0/Minesweeper---Python-Tkinter#camera_flash-screens-of-the-game)
+- [Acknowledgements](https://github.com/Liko0o0/Minesweeper---Python-Tkinter#books-acknowledgements)
   
-## About the Project
+## 📖 About the Project
 ### A minesweeper game written in python using tkinter (Only in French for now).
 - ### **Features :**
     - **Various levels of difficulties**
     - **Ranking of the best times**
     - **Achievements**
 
-## **HOW TO RUN THE GAME:**
+## 🧰 How to run the game
 - **Download the latest release**
     - **Open "minesweeper.EXE"**
 > _( You may receive a warning from windows due to the .EXE )_
 
-## Version History
+## ⚙️ Version History
 - **V1.0.0**
     - Initial release
 
-## Roadmap
+## 🧭 Roadmap
 * [ ] Option to switch to English/French language
 * [ ] Option to mute sounds and musics
       
-## **SCREENS OF THE GAME:**
+## 📸 Screens of the game
 
 
 ![minesweeper 1](https://github.com/Liko0o0/Minesweeper---Python-Tkinter/assets/150863666/d9aadc5f-b712-4351-a229-e0626b97e038)
@@ -42,7 +42,7 @@
 
 ![Minesweeper 4](https://github.com/Liko0o0/Minesweeper---Python-Tkinter/assets/150863666/631df364-24d6-43e5-a8b9-b53cdfb24f7e)
 
-## Acknowledgements
+## 📚 Acknowledgements
 
 Useful resources and libraries used in the project.
 
