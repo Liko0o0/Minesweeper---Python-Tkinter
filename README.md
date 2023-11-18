@@ -1,4 +1,5 @@
-# 👾 MINESWEEPER GAME 👾
+# **<h1 align="center"> 👾 MINESWEEPER GAME 👾 </h1>**
+
 
 # 📜 Table of Contents
 
