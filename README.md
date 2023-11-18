@@ -23,7 +23,7 @@
 > _( You may receive a warning from windows due to the .EXE type )_
 
 ## ⚙️ Version History
-- ### **v1.0.1**
+- ### **v1.0.1 - HOTFIXES**
     - Fixed a bug with the times saves
     - Added achievements saving
     - Added a new icon to the .EXE
