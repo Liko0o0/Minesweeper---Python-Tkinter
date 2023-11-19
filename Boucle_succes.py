@@ -131,7 +131,7 @@ def boucle_succes():
     sous_titre_malchanceux.configure(font=(
         "Small fonts", 14, "bold"), bg='#E1CCCE', relief=RIDGE, foreground="#766B65")
 
-    # Finir en - de 1min en facile / 2min en moyen / 3min en difficile
+    # Finir en - de 15sec en facile / 45sec en moyen / 1min10 en difficile
     titre_expeditif = Label(fen, text=" Expéditif ")
     titre_expeditif.grid(row=0, column=0, columnspan=1,
                          pady=236, padx=68, sticky=NW)
