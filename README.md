@@ -11,11 +11,13 @@
 - [Acknowledgements](https://github.com/Liko0o0/Minesweeper---Python-Tkinter#-acknowledgements)
   
 ## 📖 About the Project
+
 ### A minesweeper game written in Python using Tkinter (Only in French for now).
 - ### **Features :**
     - **Various levels of difficulties**
     - **Ranking of the best times**
     - **Achievements**
+### ![Capture](https://github.com/Liko0o0/Minesweeper_Python-Tkinter/assets/150863666/0f3b685a-16b0-4998-9659-cda1315ea7a0)
 
 ## 🧰 How to run the game
 - **Download the latest release**
