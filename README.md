@@ -8,7 +8,7 @@
 - [Version history](https://github.com/Liko0o0/Minesweeper---Python-Tkinter#%EF%B8%8F-version-history)
 - [Roadmap](https://github.com/Liko0o0/Minesweeper---Python-Tkinter#-roadmap)
 - [Screens of the game](https://github.com/Liko0o0/Minesweeper---Python-Tkinter#-screens-of-the-game)
-- [Acknowledgements](https://github.com/Liko0o0/Minesweeper---Python-Tkinter#-acknowledgements)
+- [Documentation Links](https://github.com/Liko0o0/Minesweeper---Python-Tkinter#-documentation-links)
   
 ## 📖 About the Project
 
@@ -50,7 +50,7 @@
 
 ![Minesweeper 4](https://github.com/Liko0o0/Minesweeper---Python-Tkinter/assets/150863666/631df364-24d6-43e5-a8b9-b53cdfb24f7e)
 
-## 📚 Acknowledgements
+## 📚 Documentation Links
 
 ### Useful resources and libraries used in the project.
 
