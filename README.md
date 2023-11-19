@@ -26,7 +26,7 @@
 
 ## ⚙️ Version History
 - ### **v1.0.1 - HOTFIXES**
-    - Fixed a bug with the times saves
+    - Fixed a bug with time saving
     - Added achievements saving
     - Added a new icon to the .EXE
   
