@@ -20,17 +20,23 @@
 ### ![Capture](https://github.com/Liko0o0/Minesweeper_Python-Tkinter/assets/150863666/0f3b685a-16b0-4998-9659-cda1315ea7a0)
 
 ## 🧰 How to run the game
-- **Download the latest release**
+- **Download the latest release ([here](https://github.com/Liko0o0/Minesweeper_Python-Tkinter/releases/))**
     - **Open "minesweeper.EXE"**
 > _( You may receive a warning from windows due to the .EXE type )_
+- **Only if you want to use the code, you will need :**
+    - **Python 3.12.0**
+    - **PyGame 2.5.2**
+> _( You can look for more informations in the [Documentation Links](https://github.com/Liko0o0/Minesweeper---Python-Tkinter#-documentation-links)
+ )_
+
 
 ## ⚙️ Version History
-- ### **v1.0.1 - HOTFIXES**
+- ### **[v1.0.1 - HOTFIXES](https://github.com/Liko0o0/Minesweeper_Python-Tkinter/releases/tag/V1.0.1)**
     - Fixed a bug with time saving
     - Added achievements saving
     - Added a new icon to the .EXE
   
-- ### **v1.0.0**
+- ### **[v1.0.0](https://github.com/Liko0o0/Minesweeper_Python-Tkinter/releases/tag/V1.0.0)**
     - Initial release
 
 ## 🧭 Roadmap
