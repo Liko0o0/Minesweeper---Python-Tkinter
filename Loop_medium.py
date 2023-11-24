@@ -59,7 +59,7 @@ def boucle_moyen(mute, language):
     if language == 'french':
         fen.title('Démineur (Moyen)')
     else:
-        fen.title('Démineur (Medium)')
+        fen.title('Minesweeper (Medium)')
     centrer_fen(860, 600)
     fen.resizable(False, False)
     fen.iconbitmap(icon)
@@ -144,10 +144,16 @@ def boucle_moyen(mute, language):
                         if timer <= 45:
                             import Main
                             Main.expeditif = True
-                        messagebox.showinfo(
-                            title="Bravo", message=f"Vous avez gagner en {result} !")
-                        rejouer = messagebox.askyesno(
-                            title="Rejouer", message="Voulez vous rejouer ?")
+                        if language == 'french':
+                            messagebox.showinfo(
+                                title="Bravo", message=f"Vous avez gagner en {result} !")
+                            rejouer = messagebox.askyesno(
+                                title="Rejouer", message="Voulez vous rejouer ?")
+                        elif language == 'english':
+                            messagebox.showinfo(
+                                title="GG", message=f"You have won in {result} !")
+                            rejouer = messagebox.askyesno(
+                                title="Play again", message="Do you want to play again ?")
                         if rejouer == True:
                             fen.destroy()
                             boucle_moyen(mute, language)
@@ -211,8 +217,12 @@ def boucle_moyen(mute, language):
                     Main.chanceux = True
 
                 Case_m.nb_case_m -= 1
-                nb_case_restantes.configure(
-                    text=f" Cases restantes : {Case_m.nb_case_m} ")
+                if language=='french':
+                    nb_case_restantes.configure(
+                        text=f" Cases restantes : {Case_m.nb_case_m} ")
+                else:
+                    nb_case_restantes.configure(
+                        text=f" Cell left : {Case_m.nb_case_m} ")
             self.est_decouvert = True
 
         def bombe_autour(self):
@@ -239,10 +249,16 @@ def boucle_moyen(mute, language):
                 import Main
                 Main.temeraire = True
             game_over = True
-            messagebox.showwarning(
-                title="Game Over", message="Vous avez cliquer sur une bombe !")
-            rejouer = messagebox.askyesno(
-                title="Rejouer", message="Voulez vous rejouer ?")
+            if language == 'french':
+                messagebox.showwarning(
+                    title="Game Over", message="Vous avez cliquer sur une bombe !")
+                rejouer = messagebox.askyesno(
+                    title="Rejouer", message="Voulez vous rejouer ?")
+            elif language == 'english':
+                messagebox.showwarning(
+                    title="Game Over", message="You clicked on a mine !")
+                rejouer = messagebox.askyesno(
+                    title="Play again", message="Do you want to play again ?")
             if rejouer == True:
                 fen.destroy()
                 boucle_moyen(mute, language)
@@ -257,7 +273,10 @@ def boucle_moyen(mute, language):
             for case in Case_m.total:
                 if case.marquer:
                     i -= 1
-            nb_bombe.configure(text=f" Bombes : {i} ")
+            if language =='french':
+                nb_bombe.configure(text=f" Bombes : {i} ")
+            else:
+                nb_bombe.configure(text=f" Mines : {i} ")
 
         def clique_droit(self, event):
             marque_case.play()
@@ -291,7 +310,15 @@ def boucle_moyen(mute, language):
             timer -= 60
             m += 1
         s = timer
-        result = f"{m} minutes et {s} secondes"
+        if m==0:
+            result = f"{s} secondes"
+        else:
+            result = f"{m} minutes et {s} secondes"
+        if language == 'english':
+            if m==0:
+                result = f"{s} seconds"
+            else:
+                result = f"{m} minutes and {s} seconds"
         return f"{m},{s}"
 
 ## ----- Création des canevas -----##
@@ -339,6 +366,11 @@ def boucle_moyen(mute, language):
         row=0, column=0, columnspan=2, padx=15, pady=50, sticky=NW)
     nb_case_restantes.config(
         font=("Small fonts", 15), bg='#E1CCCE', relief=RIDGE)
+    
+    if language == 'english':
+        titre.config(text=' - MEDIUM - ')
+        nb_bombe.config(text=' Mines : 14 ')
+        nb_case_restantes.config(text=' Cell left : 50 ')
 
 ## ----- Lancement -----##
     for x in range(8):
@@ -349,3 +381,4 @@ def boucle_moyen(mute, language):
     random_bombes()
     update_time()
     fen.mainloop()
+
