@@ -31,6 +31,10 @@
 
 
 ## ⚙️ Version History
+- ### **[v1.1.0](https://github.com/Liko0o0/Minesweeper_Python-Tkinter/releases/tag/V1.1.0)**
+    - Added option to switch between English and French language
+    - Added option to mute sounds and musics
+      
 - ### **[v1.0.1 - HOTFIXES](https://github.com/Liko0o0/Minesweeper_Python-Tkinter/releases/tag/V1.0.1)**
     - Fixed a bug with time saving
     - Added achievements saving
@@ -39,9 +43,6 @@
 - ### **[v1.0.0](https://github.com/Liko0o0/Minesweeper_Python-Tkinter/releases/tag/V1.0.0)**
     - Initial release
 
-## 🧭 Roadmap
-* [ ] Option to switch between English and French language
-* [ ] Option to mute sounds and musics
       
 ## 📸 Screens of the game
 
