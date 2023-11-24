@@ -1,9 +1,3 @@
-# Ajouter option de choix de langue
-# Tout reecrire en anglais
-# Ranger dans des dossiers
-
-# [Commande de creation du .EXE avec pyinstaller]
-# pyinstaller Main.py --onefile --noconsole --add-data "music_main.mp3;." --add-data "music_game.mp3;." --add-data "button_click.mp3;." --add-data "cell_click.mp3;." --add-data "easter_egg.mp3;." --add-data "explosion.mp3;." --add-data "cell_flag.mp3;." --add-data "win.mp3;." --add-data "Loop_easy.py;." --add-data "Loop_medium.py;." --add-data "Loop_hard.py;." --add-data "Loop_achievements.py;." --add-data "Loop_time.py;." --add-data "english.png;." --add-data "french.png;." --add-data "img_sound_mute.png;." --add-data "img_sound.png;." --add-data "icon.ico;." --icon=icon.ico
 ## ----- Importation des Modules ----- ##
 from tkinter import *
 from tkinter import Button, Label
@@ -14,12 +8,41 @@ from pygame import mixer
 
 language = 'french'
 ## ----- Succes ----- ##
+repertoire_appdata = Path(os.getenv('APPDATA')) / "Minesweeper"
+chemin_s = repertoire_appdata / "achievements.txt"
+repertoire_appdata.mkdir(parents=True, exist_ok=True)
+if not chemin_s.exists():
+    with open(str(chemin_s), "w") as file:
+        pass
+
+
+def lire_succes():
+    with open(str(chemin_s), "r") as file:
+        lignes = file.read().splitlines()
+    return set(lignes)
+
+
+SUCCES_MALCHANCEUX = "Unlucky"
+SUCCES_EXPEDITIF = "Quick"
+SUCCES_TEMERAIRE = "Reckless"
+SUCCES_CHAMPION = "Champion"
+SUCCES_CHANCEUX = "Lucky"
+SUCCES_COMPLETIONNISTE = "Complementionist"
+SUCCES_COLLECTIONNEUR = "Collector"
 malchanceux = False
 expeditif = False
 temeraire = False
 champion = False
 chanceux = False
 completionniste = False
+# Verifie les succes deja débloquer dans le APPDATA
+malchanceux = SUCCES_MALCHANCEUX in lire_succes()
+expeditif = SUCCES_EXPEDITIF in lire_succes()
+temeraire = SUCCES_TEMERAIRE in lire_succes()
+champion = SUCCES_CHAMPION in lire_succes()
+chanceux = SUCCES_CHANCEUX in lire_succes()
+completionniste = SUCCES_COMPLETIONNISTE in lire_succes()
+
 
 ## ----- Initialise le mixer ----- ##
 mixer.init()
@@ -28,7 +51,7 @@ mute = False
 img_music = None
 img_music_mute = None
 
-
+## ----- Chemin ----- ##
 # Cherche le repertoire APPDATA pour stocker les infos
 repertoire_appdata = Path(os.getenv('APPDATA')) / "Minesweeper"
 if not repertoire_appdata.exists():  # Assurer l'existence du répertoire
@@ -47,12 +70,7 @@ chemin_d = repertoire_appdata / "time_hard.txt"
 if not chemin_d.exists():
     with open(str(chemin_d), "w") as file:
         pass
-chemin_s = repertoire_appdata / "achievements.txt"
-if not chemin_s.exists():
-    with open(str(chemin_s), "w") as file:
-        pass
 
-# Chemin des fichiers
 chemin_musique = Path(__file__).parent / "Sound/music_main.mp3"
 son_bouton = Path(__file__).parent / "Sound/button_click.mp3"
 icon = Path(__file__).parent / "Image/icon.ico"
@@ -142,7 +160,8 @@ def menu(mute, language):
                     completionniste = True
         import Loop_achievements as loop_s
         fen.destroy()
-        loop_s.boucle_succes(mute, language)
+        loop_s.boucle_succes(mute, language, malchanceux, temeraire,
+                             expeditif, champion, chanceux, completionniste)
 
     def toggle_mute():
         global mute
@@ -172,78 +191,51 @@ def menu(mute, language):
     fond_menu = Canvas(fen, width=460, height=640, bg='#a39193')
     fond_menu.grid(row=0, column=0, rowspan=5, sticky=N)
 
-    if language == 'french':
-        titre = Label(fen, text=" Démineur ")
-        titre.grid(row=0, column=0, columnspan=1, padx=0, pady=30, sticky=N)
-        titre.config(font=("Small fonts", 35), bg='#E1CCCE', relief=RIDGE)
+    titre = Label(fen, text=" Démineur ")
+    titre.grid(row=0, column=0, columnspan=1, padx=0, pady=30, sticky=N)
+    titre.config(font=("Small fonts", 35), bg='#E1CCCE', relief=RIDGE)
 
-        sous_titre = Label(fen, text=" Choix de la difficultée ")
-        sous_titre.grid(row=0, column=0, columnspan=1,
-                        padx=0, pady=100, sticky=N)
-        sous_titre.config(font=("Small fonts", 25), bg='#E1CCCE', relief=RIDGE)
+    sous_titre = Label(fen, text=" Choix de la difficultée ")
+    sous_titre.grid(row=0, column=0, columnspan=1,
+                    padx=0, pady=100, sticky=N)
+    sous_titre.config(font=("Small fonts", 25), bg='#E1CCCE', relief=RIDGE)
 
-        btn_facile = Button(fen, width=10, height=1, bg="#E1CCCE", text="FACILE", font=(
-            "Small fonts", 18), relief=RAISED, borderwidth=3, foreground="#00AB14", command=lancement_facile)
-        btn_facile.grid(row=0, pady=190, sticky=N)
-        btn_facile.config(activebackground="#CAB7B9")
-        btn_moyen = Button(fen, width=10, height=1, bg="#E1CCCE", text="MOYEN", font=(
-            "Small fonts", 18), relief=RAISED, borderwidth=3, foreground="#CE8700", command=lancement_moyen)
-        btn_moyen.grid(row=0, pady=260, sticky=N)
-        btn_moyen.config(activebackground="#CAB7B9")
-        btn_difficile = Button(fen, width=10, height=1, bg="#E1CCCE", text="DIFFICILE", font=(
-            "Small fonts", 18), relief=RAISED, borderwidth=3, foreground="#b22222", command=lancement_difficile)
-        btn_difficile.grid(row=0, pady=330, sticky=N)
-        btn_difficile.config(activebackground="#CAB7B9")
+    btn_facile = Button(fen, width=10, height=1, bg="#E1CCCE", text="FACILE", font=(
+        "Small fonts", 18), relief=RAISED, borderwidth=3, foreground="#00AB14", command=lancement_facile)
+    btn_facile.grid(row=0, pady=190, sticky=N)
+    btn_facile.config(activebackground="#CAB7B9")
+    btn_moyen = Button(fen, width=10, height=1, bg="#E1CCCE", text="MOYEN", font=(
+        "Small fonts", 18), relief=RAISED, borderwidth=3, foreground="#CE8700", command=lancement_moyen)
+    btn_moyen.grid(row=0, pady=260, sticky=N)
+    btn_moyen.config(activebackground="#CAB7B9")
+    btn_difficile = Button(fen, width=10, height=1, bg="#E1CCCE", text="DIFFICILE", font=(
+        "Small fonts", 18), relief=RAISED, borderwidth=3, foreground="#b22222", command=lancement_difficile)
+    btn_difficile.grid(row=0, pady=330, sticky=N)
+    btn_difficile.config(activebackground="#CAB7B9")
 
-        btn_scoreboard = Button(fen, width=18, height=1, bg="#E1CCCE", text="MEILLEURS TEMPS", font=(
-            "Small fonts", 15), relief=RAISED, borderwidth=3, foreground="#68228b", command=lancement_temps)
-        btn_scoreboard.grid(row=0, pady=435, sticky=N)
-        btn_scoreboard.config(activebackground="#CAB7B9")
-        btn_succes = Button(fen, width=18, height=1, bg="#E1CCCE", text="SUCCES", font=(
-            "Small fonts", 15), relief=RAISED, borderwidth=3, foreground="#68228b", command=lancement_succes)
-        btn_succes.grid(row=0, pady=495, sticky=N)
-        btn_succes.config(activebackground="#CAB7B9")
+    btn_scoreboard = Button(fen, width=18, height=1, bg="#E1CCCE", text="MEILLEURS TEMPS", font=(
+        "Small fonts", 15), relief=RAISED, borderwidth=3, foreground="#68228b", command=lancement_temps)
+    btn_scoreboard.grid(row=0, pady=435, sticky=N)
+    btn_scoreboard.config(activebackground="#CAB7B9")
+    btn_succes = Button(fen, width=18, height=1, bg="#E1CCCE", text="SUCCES", font=(
+        "Small fonts", 15), relief=RAISED, borderwidth=3, foreground="#68228b", command=lancement_succes)
+    btn_succes.grid(row=0, pady=495, sticky=N)
+    btn_succes.config(activebackground="#CAB7B9")
 
-        btn_quitter = Button(fen, width=25, height=1, bg="#E1CCCE", text="QUITTER", font=(
-            "Small fonts", 17, "bold"), relief=RAISED, borderwidth=3, foreground="black")
-        btn_quitter.grid(row=0, pady=582, sticky=N)
-        btn_quitter.config(activebackground="#CAB7B9", command=fen.destroy)
-    else:
-        titre = Label(fen, text=" Minesweeper ")
-        titre.grid(row=0, column=0, columnspan=1, padx=0, pady=30, sticky=N)
-        titre.config(font=("Small fonts", 35), bg='#E1CCCE', relief=RIDGE)
+    btn_quitter = Button(fen, width=25, height=1, bg="#E1CCCE", text="QUITTER", font=(
+        "Small fonts", 17, "bold"), relief=RAISED, borderwidth=3, foreground="black")
+    btn_quitter.grid(row=0, pady=582, sticky=N)
+    btn_quitter.config(activebackground="#CAB7B9", command=fen.destroy)
 
-        sous_titre = Label(fen, text=" Choice of the difficulty ")
-        sous_titre.grid(row=0, column=0, columnspan=1,
-                        padx=0, pady=100, sticky=N)
-        sous_titre.config(font=("Small fonts", 25), bg='#E1CCCE', relief=RIDGE)
-
-        btn_facile = Button(fen, width=10, height=1, bg="#E1CCCE", text="EASY", font=(
-            "Small fonts", 18), relief=RAISED, borderwidth=3, foreground="#00AB14", command=lancement_facile)
-        btn_facile.grid(row=0, pady=190, sticky=N)
-        btn_facile.config(activebackground="#CAB7B9")
-        btn_moyen = Button(fen, width=10, height=1, bg="#E1CCCE", text="MEDIUM", font=(
-            "Small fonts", 18), relief=RAISED, borderwidth=3, foreground="#CE8700", command=lancement_moyen)
-        btn_moyen.grid(row=0, pady=260, sticky=N)
-        btn_moyen.config(activebackground="#CAB7B9")
-        btn_difficile = Button(fen, width=10, height=1, bg="#E1CCCE", text="HARD", font=(
-            "Small fonts", 18), relief=RAISED, borderwidth=3, foreground="#b22222", command=lancement_difficile)
-        btn_difficile.grid(row=0, pady=330, sticky=N)
-        btn_difficile.config(activebackground="#CAB7B9")
-
-        btn_scoreboard = Button(fen, width=18, height=1, bg="#E1CCCE", text="BEST TIME", font=(
-            "Small fonts", 15), relief=RAISED, borderwidth=3, foreground="#68228b", command=lancement_temps)
-        btn_scoreboard.grid(row=0, pady=435, sticky=N)
-        btn_scoreboard.config(activebackground="#CAB7B9")
-        btn_succes = Button(fen, width=18, height=1, bg="#E1CCCE", text="ACHIEVEMENTS", font=(
-            "Small fonts", 15), relief=RAISED, borderwidth=3, foreground="#68228b", command=lancement_succes)
-        btn_succes.grid(row=0, pady=495, sticky=N)
-        btn_succes.config(activebackground="#CAB7B9")
-
-        btn_quitter = Button(fen, width=25, height=1, bg="#E1CCCE", text="QUIT", font=(
-            "Small fonts", 17, "bold"), relief=RAISED, borderwidth=3, foreground="black")
-        btn_quitter.grid(row=0, pady=582, sticky=N)
-        btn_quitter.config(activebackground="#CAB7B9", command=fen.destroy)
+    if language == 'english':
+        titre.config(text='Minesweeper')
+        sous_titre .config(text=" Choice of the difficulty ")
+        btn_facile.config(text="EASY")
+        btn_moyen.config(text="MEDIUM")
+        btn_difficile.config(text="HARD")
+        btn_scoreboard.config(text="BEST TIME")
+        btn_succes.config(text="ACHIEVEMENTS")
+        btn_quitter.config(text="QUIT")
 
     img_music_path = PhotoImage(
         file=Path(__file__).parent / "Image/img_sound.png")
@@ -282,3 +274,4 @@ def menu(mute, language):
 ## ----- Lancement du jeu -----##
 if __name__ == "__main__":
     menu(False, "french")
+
