@@ -60,13 +60,13 @@ def boucle_temps(mute, language):
     sous_titre.config(font=("Small fonts", 25, "bold"),
                       bg='#E1CCCE', relief=RIDGE, foreground="#68228b")
 
+## ---- Création des informations -----##
     titre_facile = Label(fen, text=" Classement facile ")
     titre_facile.grid(row=0, column=0, columnspan=1,
                       padx=28, pady=180, sticky=NW)
     titre_facile.config(font=("Small fonts", 17, "bold"),
                         bg='#E1CCCE', relief=RIDGE, foreground="#00AB14")
 
-## ---- Création des informations -----##
     # Recherche des temps
     with open(str(chemin_f), "r") as file:
         l_score = [tuple(map(int, line.strip().split(',')))
@@ -74,8 +74,12 @@ def boucle_temps(mute, language):
     # Tri en fonction du temps
     l_score.sort(key=lambda x: x[0] * 60 + x[1])
     # Affichage des temps triés
-    ligne_temps = Label(fen, text='\n'.join(
-        [f'{i}.)  {temps_info[0]} minutes et {temps_info[1]} secondes' for i, temps_info in enumerate(l_score[:20], 1)]))
+    if language == 'french':
+        ligne_temps = Label(fen, text='\n'.join(
+            [f'{i}.)  {temps_info[0]} minutes et {temps_info[1]} seconds'if temps_info[0] > 0 else f'{i}.)  {temps_info[1]} secondes' for i, temps_info in enumerate(l_score[:20], 1)]))
+    elif language == 'english':
+        ligne_temps = Label(fen, text='\n'.join(
+            [f'{i}.)  {temps_info[0]} minutes and {temps_info[1]} seconds'if temps_info[0] > 0 else f'{i}.)  {temps_info[1]} seconds' for i, temps_info in enumerate(l_score[:20], 1)]))
     ligne_temps.grid(row=0, column=0, columnspan=1,
                      pady=240, padx=13, sticky=NW)
     ligne_temps.config(font=("Small fonts", 13, "bold"),
@@ -95,8 +99,12 @@ def boucle_temps(mute, language):
     # Tri en fonction du temps
     l_score.sort(key=lambda x: x[0] * 60 + x[1])
     # Affichage des temps triés
-    ligne_temps = Label(fen, text='\n'.join(
-        [f'{i}.)  {temps_info[0]} minutes et {temps_info[1]} secondes' for i, temps_info in enumerate(l_score[:20], 1)]))
+    if language == 'french':
+        ligne_temps = Label(fen, text='\n'.join(
+            [f'{i}.)  {temps_info[0]} minutes et {temps_info[1]} seconds'if temps_info[0] > 0 else f'{i}.)  {temps_info[1]} secondes' for i, temps_info in enumerate(l_score[:20], 1)]))
+    elif language == 'english':
+        ligne_temps = Label(fen, text='\n'.join(
+            [f'{i}.)  {temps_info[0]} minutes and {temps_info[1]} seconds'if temps_info[0] > 0 else f'{i}.)  {temps_info[1]} seconds' for i, temps_info in enumerate(l_score[:20], 1)]))
     ligne_temps.grid(row=0, column=0, columnspan=1,
                      pady=240, padx=310, sticky=NW)
     ligne_temps.config(font=("Small fonts", 13, "bold"),
@@ -115,8 +123,12 @@ def boucle_temps(mute, language):
     # Tri en fonction du temps
     l_score.sort(key=lambda x: x[0] * 60 + x[1])
     # Affichage des temps triés
-    ligne_temps = Label(fen, text='\n'.join(
-        [f'{i}.)  {temps_info[0]} minutes et {temps_info[1]} secondes' for i, temps_info in enumerate(l_score[:20], 1)]))
+    if language == 'french':
+        ligne_temps = Label(fen, text='\n'.join(
+            [f'{i}.)  {temps_info[0]} minutes et {temps_info[1]} seconds'if temps_info[0] > 0 else f'{i}.)  {temps_info[1]} secondes' for i, temps_info in enumerate(l_score[:20], 1)]))
+    elif language == 'english':
+        ligne_temps = Label(fen, text='\n'.join(
+            [f'{i}.)  {temps_info[0]} minutes and {temps_info[1]} seconds'if temps_info[0] > 0 else f'{i}.)  {temps_info[1]} seconds' for i, temps_info in enumerate(l_score[:20], 1)]))
     ligne_temps.grid(row=0, column=0, columnspan=1,
                      pady=240, padx=605, sticky=NW)
     ligne_temps.config(font=("Small fonts", 13, "bold"),
@@ -126,3 +138,15 @@ def boucle_temps(mute, language):
         "Small fonts", 15, "bold"), relief=RAISED, borderwidth=3, foreground="black")
     btn_retour.grid(row=0, pady=690, padx=297, sticky=NW)
     btn_retour.config(activebackground="#CAB7B9", command=retour)
+
+    if language == 'english':
+        titre.config(text=' Minesweeper ')
+        titre.grid(row=0, column=0, columnspan=1, padx=273, pady=20, sticky=NW)
+        sous_titre.config(text=' Best time ')
+        sous_titre.grid(row=0, column=0, columnspan=1,
+                        padx=320, pady=90, sticky=NW)
+        titre_facile.config(text=' Easy ranking ')
+        titre_moyen.config(text=' Medium ranking ')
+        titre_difficile.config(text=' Hard ranking ')
+        btn_retour.config(text="BACK")
+
