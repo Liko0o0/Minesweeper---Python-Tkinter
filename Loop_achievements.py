@@ -1,11 +1,10 @@
 ## ----- Importation des Modules -----##
 from tkinter import *
 from tkinter import Button, Label, messagebox
-import Main
 from pygame import mixer
 from pathlib import Path
 import os
-from Main import icon, mute
+from Main import icon
 
 ## ----- Constantes -----##
 SUCCES_MALCHANCEUX = "Unlucky"
@@ -40,27 +39,8 @@ def ecrire_succes(succes):
     with open(str(chemin_s), "a") as file:
         file.write(succes + "\n")
 
-
-def mettre_a_jour_succes(succes):
-    if succes not in lire_succes():
-        ecrire_succes(succes)
-        messagebox.showinfo("Succès débloqué",
-                            f"Vous avez débloqué le succès : {succes}")
-        setattr(Main, succes, True)
-
-
-# Verifie les succes deja débloquer dans le APPDATA
-Main.malchanceux = SUCCES_MALCHANCEUX in lire_succes()
-Main.expeditif = SUCCES_EXPEDITIF in lire_succes()
-Main.temeraire = SUCCES_TEMERAIRE in lire_succes()
-Main.champion = SUCCES_CHAMPION in lire_succes()
-Main.chanceux = SUCCES_CHANCEUX in lire_succes()
-Main.completionniste = SUCCES_COMPLETIONNISTE in lire_succes()
-
-
 ## ----- Programme principal ----- ##
-def boucle_succes(mute, language):
-
+def boucle_succes(mute, language, malchanceux, temeraire, expeditif, champion, chanceux, completionniste):
     # Permet de centrer la fenetre pour toutes les dimensions d'ecran
     def centrer_fen(largeur, hauteur):
         ecran_largeur = fen.winfo_screenwidth()
@@ -80,6 +60,7 @@ def boucle_succes(mute, language):
     fen.iconbitmap(icon)
 
     def retour():
+        import Main
         global musique_en_cour
         clique_bouton.play()
         Main.musique_en_cour += 1
@@ -219,44 +200,96 @@ def boucle_succes(mute, language):
     btn_retour.grid(row=0, pady=545, padx=290, sticky=NW)
     btn_retour.config(activebackground="#CAB7B9", command=retour)
 
+    if language=='english':
+        titre.config(text=' Minesweeper ')
+        sous_titre.config(text=' Achievements')
+        sous_titre.grid(padx=335)
+        titre_malchanceux.config(text=' Unlucky ')
+        titre_malchanceux.grid(padx=44)
+        titre_temeraire.config(text=' Reckless ')
+        titre_temeraire.grid(padx=40)
+        titre_chanceux.config(text=' Lucky ')
+        titre_completionniste.config(text=' Complementionist ', font=("Small fonts", 13, "bold"))
+        titre_expeditif.config(text=' Quick ')
+        titre_expeditif.grid(padx=44)
+        titre_collectionneur.config(text=' Collector ')
+        btn_retour.config(text="BACK")
+
+    def mettre_a_jour_succes(succes, french, english):
+        if succes not in lire_succes():
+            ecrire_succes(succes)
+            if language=='french':
+                messagebox.showinfo("Succès débloqué",
+                                f"Vous avez débloqué le succès : {french}")
+            else:
+                messagebox.showinfo("Achievements unlocked",
+                                f"You unlocked the achievement : {english}")
+            import Main
+            setattr(Main, succes, True)
+
     def succes_malchanceux():
-        if Main.malchanceux:
-            sous_titre_malchanceux.configure(
-                text=" Faire exploser une bombe au premier clique ", foreground="Black")
-            mettre_a_jour_succes(SUCCES_MALCHANCEUX)
+        if malchanceux:
+            if language=='french':
+                sous_titre_malchanceux.configure(
+                    text=" Faire exploser une bombe au premier clique ", foreground="Black")
+            else:
+                sous_titre_malchanceux.configure(
+                    text=" Detonate a bomb at the first click ", foreground="Black")
+            mettre_a_jour_succes(SUCCES_MALCHANCEUX, "Malchanceux", "Unlucky")
 
     def succes_expeditif():
-        if Main.expeditif:
-            sous_titre_expeditif.configure(
-                text=" Gagner en moins de (15s-Facile/45s-Moyen/1m-Difficile) ", foreground="Black")
-            mettre_a_jour_succes(SUCCES_EXPEDITIF)
+        if expeditif:
+            if language=='french':
+                sous_titre_expeditif.configure(
+                    text=" Gagner en moins de (15s-Facile/45s-Moyen/1m-Difficile) ", foreground="Black")
+            else:
+                sous_titre_expeditif.configure(
+                    text=" Win in less than (15s-Easy/45s-Medium/1m-Hard) ", foreground="Black")
+            mettre_a_jour_succes(SUCCES_EXPEDITIF, "Expeditif", "Quick")
 
     def succes_temeraire():
-        if Main.temeraire:
-            sous_titre_temeraire.configure(
-                text=" Perdre 10 fois d'affilée ", foreground="Black")
-            mettre_a_jour_succes(SUCCES_TEMERAIRE)
+        if temeraire:
+            if language=='french':
+                sous_titre_temeraire.configure(
+                    text=" Perdre 10 fois d'affilée ", foreground="Black")
+            else:
+                sous_titre_temeraire.configure(
+                    text=" Lose 10 times in a row ", foreground="Black")
+            mettre_a_jour_succes(SUCCES_TEMERAIRE, "Temeraire", "Reckless")
 
     def succes_champion():
-        if Main.champion:
-            sous_titre_champion.configure(
-                text=" Gagner 3 fois d'affilée ", foreground="Black")
-            mettre_a_jour_succes(SUCCES_CHAMPION)
+        if champion:
+            if language=='french':
+                sous_titre_champion.configure(
+                    text=" Gagner 3 fois d'affilée ", foreground="Black")
+            else:
+                sous_titre_champion.configure(
+                    text=" Win 3 times in a row ", foreground="Black")
+            mettre_a_jour_succes(SUCCES_CHAMPION, "Champion", "Champion")
 
     def succes_chanceux():
-        if Main.chanceux:
-            sous_titre_chanceux.configure(
-                text=" Découvrir une case avec 6 bombes ou plus autour ", foreground="Black")
-            mettre_a_jour_succes(SUCCES_CHANCEUX)
+        if chanceux:
+            if language=='french':
+                sous_titre_chanceux.configure(
+                    text=" Découvrir une case avec 6 bombes ou plus autour ", foreground="Black")
+            else:
+                sous_titre_chanceux.configure(
+                    text=" Discover a cell with 6 mines or more around ", foreground="Black")
+            mettre_a_jour_succes(SUCCES_CHANCEUX, "Chanceux", "Lucky")
 
     def succes_completionniste():
-        if Main.completionniste:
-            sous_titre_completionniste.configure(
-                text=" Gagner une partie dans chaque difficulté ", foreground="Black")
-            mettre_a_jour_succes(SUCCES_COMPLETIONNISTE)
+        if completionniste:
+            if language=='french':
+                sous_titre_completionniste.configure(
+                    text=" Gagner une partie dans chaque difficulté ", foreground="Black")
+            else:
+                sous_titre_completionniste.configure(
+                    text=" Win a game in each difficulty ", foreground="Black")
+            mettre_a_jour_succes(SUCCES_COMPLETIONNISTE, "Completionniste", "Complementionist")
 
     # ?
     def GG():
+        import Main
         Main.mixer.music.pause()
         secret.play()
 
@@ -290,10 +323,14 @@ def boucle_succes(mute, language):
             fen.after(0, easter_egg, sous_titre, couleurs, i, 270)
 
     def succes_collectionneur():
-        if Main.completionniste and Main.chanceux and Main.champion and Main.temeraire and Main.expeditif and Main.malchanceux:
-            sous_titre_collectionneur.configure(
-                text=" Débloquer tous les succès ! ", foreground="Black")
-            mettre_a_jour_succes(SUCCES_COLLECTIONNEUR)
+        if completionniste and chanceux and champion and temeraire and expeditif and malchanceux:
+            if language=='french':
+                sous_titre_collectionneur.configure(
+                    text=" Débloquer tous les succès ! ", foreground="Black")
+            else:
+                sous_titre_collectionneur.configure(
+                    text=" Unlock all the achievements ! ", foreground="Black")
+            mettre_a_jour_succes(SUCCES_COLLECTIONNEUR, "Collectionneur", "Collector")
             GG()
 
     succes_malchanceux()
@@ -303,3 +340,4 @@ def boucle_succes(mute, language):
     succes_chanceux()
     succes_completionniste()
     succes_collectionneur()
+
