@@ -1,7 +1,7 @@
 # Tout traduire en anglais
 
 # [Command to create .EXE with pyinstaller]
-# pyinstaller Main.py --onefile --noconsole --add-data "Sound/music_main.mp3;Sound" --add-data "Sound/music_game.mp3;Sound" --add-data "Sound/button_click.mp3;Sound" --add-data "Sound/cell_click.mp3;Sound" --add-data "Sound/easter_egg.mp3;Sound" --add-data "Sound/explosion.mp3;Sound" --add-data "Sound/cell_flag.mp3;Sound" --add-data "Sound/win.mp3;Sound" --add-data "Loop_easy.py;." --add-data "Loop_medium.py;." --add-data "Loop_hard.py;." --add-data "Loop_achievements.py;." --add-data "Loop_time.py;." --add-data "Image/english.png;Image" --add-data "Image/french.png;Image" --add-data "Image/img_sound_mute.png;Image" --add-data "Image/img_sound.png;Image" --add-data "Image/icon.ico;Image" --icon=Image/icon.ico
+# pyinstaller Main.py --onefile --noconsole --add-data "Sound/music_main.mp3;Sound" --add-data "Sound/music_game.mp3;Sound" --add-data "Sound/button_click.mp3;Sound" --add-data "Sound/cell_click.mp3;Sound" --add-data "Sound/easter_egg.mp3;Sound" --add-data "Sound/explosion.mp3;Sound" --add-data "Sound/cell_flag.mp3;Sound" --add-data "Sound/win.mp3;Sound" --add-data "Easy.py;." --add-data "Medium.py;." --add-data "Hard.py;." --add-data "Achievements.py;." --add-data "Time.py;." --add-data "Image/english.png;Image" --add-data "Image/french.png;Image" --add-data "Image/img_sound_mute.png;Image" --add-data "Image/img_sound.png;Image" --add-data "Image/icon.ico;Image" --icon=Image/icon.ico
 
 ## ----- Import Modules ----- ##
 from tkinter import *
