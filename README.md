@@ -50,15 +50,15 @@
 ## 📸 Screens of the game
 
 
-![minesweeper 1](https://github.com/Liko0o0/Minesweeper---Python-Tkinter/assets/150863666/d9aadc5f-b712-4351-a229-e0626b97e038)
+![minesweeper 1](https://github.com/Liko0o0/Minesweeper_Python-Tkinter/assets/150863666/bb05faeb-f630-4f58-9c41-76d168da7f70)
 
-![Minesweeper 2](https://github.com/Liko0o0/Minesweeper---Python-Tkinter/assets/150863666/258e10cd-ef9b-48be-9d6d-9ced15018fa0)
+![Minesweeper 2](https://github.com/Liko0o0/Minesweeper_Python-Tkinter/assets/150863666/71a7978e-9ddc-40d6-852a-43681134f591)
 
-![minesweeper 5](https://github.com/Liko0o0/Minesweeper---Python-Tkinter/assets/150863666/47451125-fc44-48d8-b6ff-75fa7f78ed1c)
+![Minesweeper 3](https://github.com/Liko0o0/Minesweeper_Python-Tkinter/assets/150863666/302ceca2-00f8-4598-a95f-835f74ad3a54)
 
-![Minesweeper 3](https://github.com/Liko0o0/Minesweeper---Python-Tkinter/assets/150863666/bee25b11-056d-42c5-aba7-3338657c6b48)
+![Minesweeper 4](https://github.com/Liko0o0/Minesweeper_Python-Tkinter/assets/150863666/8d72559b-56df-4d9e-b388-b8abc3495ad7)
 
-![Minesweeper 4](https://github.com/Liko0o0/Minesweeper---Python-Tkinter/assets/150863666/631df364-24d6-43e5-a8b9-b53cdfb24f7e)
+![minesweeper 5](https://github.com/Liko0o0/Minesweeper_Python-Tkinter/assets/150863666/743dd948-b75f-4d09-9cbf-f9932a758f83)
 
 ## 📚 Documentation Links
 
