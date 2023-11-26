@@ -216,7 +216,7 @@ def hard_loop(mute, language):
                 elif nb == 5:
                     self.btn_cell.configure(fg="#b25da6", bg='#d3927b')
                 elif nb >= 6:
-                    self.btn_cell.configure(bg='Black')
+                    self.btn_cell.configure(bg='#d3927b')
                     import Main
                     Main.lucky = True
 
@@ -309,10 +309,10 @@ def hard_loop(mute, language):
         global timer
         global result
         m = 0
-        while timer >= 60:
-            timer -= 60
-            m += 1
         s = timer
+        while s >= 60:
+            s -= 60
+            m += 1
         if m == 0:
             result = f"{s} secondes"
         else:
