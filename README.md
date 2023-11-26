@@ -31,7 +31,10 @@
 
 
 ## ⚙️ Version History
-- ### **[v1.1.0](https://github.com/Liko0o0/Minesweeper_Python-Tkinter/releases/tag/V1.1.0)**
+- ### **[v1.1.1](https://github.com/Liko0o0/Minesweeper_Python-Tkinter/releases/tag/V1.1.1)**
+  - Made the numbers better readable
+    
+- ### **[v1.1.0 - OPTION](https://github.com/Liko0o0/Minesweeper_Python-Tkinter/releases/tag/V1.1.0)**
     - Added option to switch between English and French language
     - Added option to mute musics
       
@@ -40,7 +43,7 @@
     - Added achievements saving
     - Added a new icon to the .EXE
   
-- ### **[v1.0.0](https://github.com/Liko0o0/Minesweeper_Python-Tkinter/releases/tag/V1.0.0)**
+- ### **[v1.0.0 - RELEASE](https://github.com/Liko0o0/Minesweeper_Python-Tkinter/releases/tag/V1.0.0)**
     - Initial release
 
       
