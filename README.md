@@ -4,9 +4,8 @@
 # 📜 Table of Contents
 
 - [About the Project](https://github.com/Liko0o0/Minesweeper---Python-Tkinter#-about-the-project)
-- [Run the game](https://github.com/Liko0o0/Minesweeper---Python-Tkinter#-how-to-run-the-game)
+- [How to run the game](https://github.com/Liko0o0/Minesweeper---Python-Tkinter#-how-to-run-the-game)
 - [Version history](https://github.com/Liko0o0/Minesweeper---Python-Tkinter#%EF%B8%8F-version-history)
-- [Roadmap](https://github.com/Liko0o0/Minesweeper---Python-Tkinter#-roadmap)
 - [Screens of the game](https://github.com/Liko0o0/Minesweeper---Python-Tkinter#-screens-of-the-game)
 - [Documentation Links](https://github.com/Liko0o0/Minesweeper---Python-Tkinter#-documentation-links)
   
