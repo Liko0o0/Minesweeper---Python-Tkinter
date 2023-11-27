@@ -11,7 +11,7 @@
   
 ## 📖 About the Project
 
-### A minesweeper game written in Python using Tkinter (Only in French for now).
+### A minesweeper game written in Python using Tkinter .
 - ### **Features :**
     - **Various levels of difficulties**
     - **Ranking of the best times**
