@@ -30,6 +30,9 @@
 
 
 ## ⚙️ Version History
+- ### **[v1.1.2](https://github.com/Liko0o0/Minesweeper_Python-Tkinter/releases/tag/V1.1.1)**
+  - Changed the cell sizes
+    
 - ### **[v1.1.1](https://github.com/Liko0o0/Minesweeper_Python-Tkinter/releases/tag/V1.1.1)**
   - Made the numbers better readable
     
@@ -51,9 +54,9 @@
 
 ![minesweeper 1](https://github.com/Liko0o0/Minesweeper_Python-Tkinter/assets/150863666/bb05faeb-f630-4f58-9c41-76d168da7f70)
 
-![Minesweeper 2](https://github.com/Liko0o0/Minesweeper_Python-Tkinter/assets/150863666/71a7978e-9ddc-40d6-852a-43681134f591)
+![Capture](https://github.com/Liko0o0/Minesweeper_Python-Tkinter/assets/150863666/a63fac90-309f-479c-b953-187312e64232)
 
-![Minesweeper 3](https://github.com/Liko0o0/Minesweeper_Python-Tkinter/assets/150863666/302ceca2-00f8-4598-a95f-835f74ad3a54)
+![Minesweeper 3](https://github.com/Liko0o0/Minesweeper_Python-Tkinter/assets/150863666/44c4c581-a2d5-4450-b56c-92a0f6352bc1)
 
 ![Minesweeper 4](https://github.com/Liko0o0/Minesweeper_Python-Tkinter/assets/150863666/8d72559b-56df-4d9e-b388-b8abc3495ad7)
 
