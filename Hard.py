@@ -78,7 +78,7 @@ def hard_loop(mute, language):
 ## ----- Class to create the cell ----- ##
     class Cell_h:
         total = []
-        cell_nb_h = 79
+        cell_nb_h = 123
 
         def __init__(self, x, y):
             self.is_mine = False
@@ -90,8 +90,8 @@ def hard_loop(mute, language):
             Cell_h.total.append(self)
 
         def create_cell_btn(self):
-            btn = Button(grid, width=4, height=1, bg="#aa6f73",
-                         text='', font=("Small fonts", 19, "bold"))
+            btn = Button(grid, width=3, height=1, bg="#aa6f73",
+                         text='', font=("Small fonts", 15, "bold"))
             btn.bind('<Button-1>', self.left_click)
             btn.bind('<Button-3>', self.right_click)
             btn.bind('<Enter>', self.enter)
@@ -215,6 +215,8 @@ def hard_loop(mute, language):
                     self.btn_cell.configure(fg="#ce4a4a", bg='#d3927b')
                 elif nb == 5:
                     self.btn_cell.configure(fg="#b25da6", bg='#d3927b')
+                    import Main
+                    Main.lucky = True
                 elif nb >= 6:
                     self.btn_cell.configure(bg='#d3927b')
                     import Main
@@ -308,8 +310,8 @@ def hard_loop(mute, language):
     def result_h():
         global timer
         global result
-        m = 0
         s = timer
+        m = 0
         while s >= 60:
             s -= 60
             m += 1
@@ -328,21 +330,21 @@ def hard_loop(mute, language):
     main = Canvas(window, width=1110, height=740, bg='#a39193')
     main.grid(row=0, column=0, columnspan=1, padx=3, pady=3)
 
-    border = Frame(window, bg='#f6e0b5', width=732, height=557)
-    border.place(x=194, y=144)
+    border = Frame(window, bg='#f6e0b5', width=630, height=540)
+    border.place(x=244, y=152)
 
     grid = Frame(window)
-    grid.place(x=210, y=158)
+    grid.place(x=265, y=170)
 
 ## ---- Information creation -----##
     titre = Label(window, text=" - DIFFICILE - ")
     titre.grid(row=0, column=0, columnspan=2, padx=0, pady=20, sticky=N)
-    titre.config(font=("Small fonts", 25, "bold"),
+    titre.config(font=("Small fonts", 35, "bold"),
                  bg='#E1CCCE', relief=RIDGE, foreground="#b22222")
     chronometre = Label(window, text=" ")
     chronometre.grid(row=0, column=0, columnspan=2,
-                     padx=80, pady=60, sticky=NE)
-    chronometre.config(font=("Small fonts", 20), bg='#E1CCCE', relief=RIDGE)
+                     padx=80, pady=160, sticky=NE)
+    chronometre.config(font=("Small fonts", 40), bg='#E1CCCE', relief=RIDGE)
     # Finding times
     with open(str(h_path), "r") as file:
         l_score = [tuple(map(int, line.strip().split(',')))
@@ -353,27 +355,27 @@ def hard_loop(mute, language):
     record = Label(window, text='\n'.join(
         [f' Record: {temps_info[0]} min et {temps_info[1]} sec ' if temps_info[0] > 0 else f' Record: {temps_info[1]} sec ' for i, temps_info in enumerate(l_score[:1], 1)]))
     record.grid(row=0, column=0, columnspan=2, padx=15, pady=15, sticky=NE)
-    record.config(font=("Small fonts", 15), bg='#E1CCCE', relief=RIDGE)
+    record.config(font=("Small fonts", 20), bg='#E1CCCE', relief=RIDGE)
 
     mine_nb = Label(window, text=" Bombes : 21 ")
     mine_nb.grid(row=0, column=0, columnspan=2,
                  padx=15, pady=15, sticky=NW)
-    mine_nb.config(font=("Small fonts", 15), bg='#E1CCCE', relief=RIDGE)
+    mine_nb.config(font=("Small fonts", 20), bg='#E1CCCE', relief=RIDGE)
 
-    nb_remaining_cell = Label(window, text=" Cases restantes : 79 ")
+    nb_remaining_cell = Label(window, text=" Cases restantes : 123 ")
     nb_remaining_cell.grid(
-        row=0, column=0, columnspan=2, padx=15, pady=50, sticky=NW)
+        row=0, column=0, columnspan=2, padx=15, pady=70, sticky=NW)
     nb_remaining_cell.config(
-        font=("Small fonts", 15), bg='#E1CCCE', relief=RIDGE)
+        font=("Small fonts", 20), bg='#E1CCCE', relief=RIDGE)
 
     if language == 'english':
         titre.config(text=' - HARD - ')
         mine_nb.config(text=' Mines : 21 ')
-        nb_remaining_cell.config(text=' Cell left : 79 ')
+        nb_remaining_cell.config(text=' Cell left : 123 ')
 
 ## ----- Lancement -----##
-    for x in range(10):
-        for y in range(10):
+    for x in range(12):
+        for y in range(12):
             c = Cell_h(x, y)
             c.create_cell_btn()
             c.btn_cell.grid(column=x, row=y)  # Grid Creation

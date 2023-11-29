@@ -77,7 +77,7 @@ def easy_loop(mute, language):
 ## ----- Class to create the cell ----- ##
     class Cell_e:
         total = []
-        cell_nb = 29
+        cell_nb = 57
 
         def __init__(self, x, y):
             self.is_mine = False
@@ -89,8 +89,8 @@ def easy_loop(mute, language):
             Cell_e.total.append(self)
 
         def create_cell_btn(self):
-            btn = Button(grid, width=4, height=1, bg="#aa6f73",
-                         text='', font=("Small fonts", 19, "bold"))
+            btn = Button(grid, width=3, height=1, bg="#aa6f73",
+                         text='', font=("Small fonts", 15, "bold"))
             btn.bind('<Button-1>', self.left_click)
             btn.bind('<Button-3>', self.right_click)
             btn.bind('<Enter>', self.enter)
@@ -213,6 +213,8 @@ def easy_loop(mute, language):
                     self.btn_cell.configure(fg="#ce4a4a", bg='#d3927b')
                 elif nb == 5:
                     self.btn_cell.configure(fg="#b25da6", bg='#d3927b')
+                    import Main
+                    Main.lucky = True
                 elif nb >= 6:
                     self.btn_cell.configure(bg='#d3927b')
                     import Main
@@ -327,11 +329,11 @@ def easy_loop(mute, language):
     main = Canvas(window, width=700, height=470, bg='#a39193')
     main.grid(row=0, column=0, columnspan=1, padx=3, pady=3)
 
-    border = Frame(window, bg='#f6e0b5', width=455, height=345)
-    border.place(x=130, y=105)
+    border = Frame(window, bg='#f6e0b5', width=416, height=356)
+    border.place(x=145, y=100)
 
     grid = Frame(window)
-    grid.place(x=147, y=118)
+    grid.place(x=157, y=110)
 
 ## ---- Information creation -----##
     title = Label(window, text=" - FACILE - ")
@@ -340,8 +342,8 @@ def easy_loop(mute, language):
                  bg='#E1CCCE', relief=RIDGE, foreground="#009912")
     chronometre = Label(window, text=" ")
     chronometre.grid(row=0, column=0, columnspan=2,
-                     padx=40, pady=60, sticky=NE)
-    chronometre.config(font=("Small fonts", 18), bg='#E1CCCE', relief=RIDGE)
+                     padx=40, pady=80, sticky=NE)
+    chronometre.config(font=("Small fonts", 20), bg='#E1CCCE', relief=RIDGE)
     # Finding times
     with open(str(e_path), "r") as file:
         l_score = [tuple(map(int, line.strip().split(',')))
@@ -352,14 +354,14 @@ def easy_loop(mute, language):
     record = Label(window, text='\n'.join(
         [f' Record: {temps_info[0]} min et {temps_info[1]} sec ' if temps_info[0] > 0 else f' Record: {temps_info[1]} sec ' for i, temps_info in enumerate(l_score[:1], 1)]))
     record.grid(row=0, column=0, columnspan=2, padx=15, pady=15, sticky=NE)
-    record.config(font=("Small fonts", 15), bg='#E1CCCE', relief=RIDGE)
+    record.config(font=("Small fonts", 17), bg='#E1CCCE', relief=RIDGE)
 
     mine_nb = Label(window, text=" Bombes : 7 ")
     mine_nb.grid(row=0, column=0, columnspan=2,
                  padx=15, pady=15, sticky=NW)
     mine_nb.config(font=("Small fonts", 14), bg='#E1CCCE', relief=RIDGE)
 
-    nb_remaining_cell = Label(window, text=" Cases restantes : 29 ")
+    nb_remaining_cell = Label(window, text=" Cases restantes : 57 ")
     nb_remaining_cell.grid(
         row=0, column=0, columnspan=2, padx=15, pady=50, sticky=NW)
     nb_remaining_cell.config(
@@ -368,11 +370,11 @@ def easy_loop(mute, language):
     if language == 'english':
         title.config(text=' - EASY - ')
         mine_nb.config(text=' Mines : 7 ')
-        nb_remaining_cell.config(text=' Cell left : 29 ')
+        nb_remaining_cell.config(text=' Cell left : 57 ')
 
 ## ----- Launcher -----##
-    for x in range(6):
-        for y in range(6):
+    for x in range(8):
+        for y in range(8):
             c = Cell_e(x, y)
             c.create_cell_btn()
             c.btn_cell.grid(column=x, row=y)  # Grid Creation

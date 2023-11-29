@@ -78,7 +78,7 @@ def medium_loop(mute, language):
 ## ----- Class to create the cell ----- ##
     class Cell_m:
         total = []
-        cell_nb_m = 50
+        cell_nb_m = 86
 
         def __init__(self, x, y):
             self.is_mine = False
@@ -90,8 +90,8 @@ def medium_loop(mute, language):
             Cell_m.total.append(self)
 
         def create_cell_btn(self):
-            btn = Button(grid, width=4, height=1, bg="#aa6f73",
-                         text='', font=("Small fonts", 19, "bold"))
+            btn = Button(grid, width=3, height=1, bg="#aa6f73",
+                         text='', font=("Small fonts", 15, "bold"))
             btn.bind('<Button-1>', self.left_click)
             btn.bind('<Button-3>', self.right_click)
             btn.bind('<Enter>', self.enter)
@@ -124,7 +124,7 @@ def medium_loop(mute, language):
                     if Cell_m.cell_nb_m == 0:
                         global game_over
                         global first_loop
-                        global time
+                        global time_game
                         global lost_in_a_row
                         global win_in_a_row
                         global m_win
@@ -140,10 +140,10 @@ def medium_loop(mute, language):
                             Main.champion = True
                         game_over = True
                         first_loop = False
-                        time = result_m()
+                        time_game = result_m()
                         # Data recording
                         score = open(str(m_path), "a")
-                        score.write(str(time)+"\n")
+                        score.write(str(time_game)+"\n")
                         score.close()
                         if timer <= 45:
                             import Main
@@ -215,6 +215,8 @@ def medium_loop(mute, language):
                     self.btn_cell.configure(fg="#ce4a4a", bg='#d3927b')
                 elif nb == 5:
                     self.btn_cell.configure(fg="#b25da6", bg='#d3927b')
+                    import Main
+                    Main.lucky = True
                 elif nb >= 6:
                     self.btn_cell.configure(bg='#d3927b')
                     import Main
@@ -329,21 +331,21 @@ def medium_loop(mute, language):
     main = Canvas(window, width=850, height=590, bg='#a39193')
     main.grid(row=0, column=0, columnspan=1, padx=3, pady=3)
 
-    border = Frame(window, bg='#f6e0b5', width=592, height=450)
-    border.place(x=138, y=113)
+    border = Frame(window, bg='#f6e0b5', width=522, height=448)
+    border.place(x=175, y=113)
 
     grid = Frame(window)
-    grid.place(x=153, y=127)
+    grid.place(x=190, y=127)
 
 ## ---- Information creation -----##
     title = Label(window, text=" - MOYEN - ")
     title.grid(row=0, column=0, columnspan=2, padx=0, pady=20, sticky=N)
-    title.config(font=("Small fonts", 25, "bold"),
+    title.config(font=("Small fonts", 28, "bold"),
                  bg='#E1CCCE', relief=RIDGE, foreground="#CE8700")
     chronometre = Label(window, text=" ")
     chronometre.grid(row=0, column=0, columnspan=2,
-                     padx=40, pady=60, sticky=NE)
-    chronometre.config(font=("Small fonts", 20), bg='#E1CCCE', relief=RIDGE)
+                     padx=40, pady=100, sticky=NE)
+    chronometre.config(font=("Small fonts", 23), bg='#E1CCCE', relief=RIDGE)
     # Finding times
     with open(str(m_path), "r") as file:
         l_score = [tuple(map(int, line.strip().split(',')))
@@ -354,27 +356,27 @@ def medium_loop(mute, language):
     record = Label(window, text='\n'.join(
         [f' Record: {temps_info[0]} min et {temps_info[1]} sec ' if temps_info[0] > 0 else f' Record: {temps_info[1]} sec ' for i, temps_info in enumerate(l_score[:1], 1)]))
     record.grid(row=0, column=0, columnspan=2, padx=15, pady=15, sticky=NE)
-    record.config(font=("Small fonts", 15), bg='#E1CCCE', relief=RIDGE)
+    record.config(font=("Small fonts", 20), bg='#E1CCCE', relief=RIDGE)
 
     mine_nb = Label(window, text=" Bombes : 14 ")
     mine_nb.grid(row=0, column=0, columnspan=2,
                  padx=15, pady=15, sticky=NW)
-    mine_nb.config(font=("Small fonts", 15), bg='#E1CCCE', relief=RIDGE)
+    mine_nb.config(font=("Small fonts", 17), bg='#E1CCCE', relief=RIDGE)
 
-    nb_remaining_cell = Label(window, text=" Cases restantes : 50 ")
+    nb_remaining_cell = Label(window, text=" Cases restantes : 86 ")
     nb_remaining_cell.grid(
-        row=0, column=0, columnspan=2, padx=15, pady=50, sticky=NW)
+        row=0, column=0, columnspan=2, padx=15, pady=60, sticky=NW)
     nb_remaining_cell.config(
-        font=("Small fonts", 15), bg='#E1CCCE', relief=RIDGE)
+        font=("Small fonts", 17), bg='#E1CCCE', relief=RIDGE)
 
     if language == 'english':
         title.config(text=' - MEDIUM - ')
         mine_nb.config(text=' Mines : 14 ')
-        nb_remaining_cell.config(text=' Cell left : 50 ')
+        nb_remaining_cell.config(text=' Cell left : 86 ')
 
 ## ----- Lancement -----##
-    for x in range(8):
-        for y in range(8):
+    for x in range(10):
+        for y in range(10):
             c = Cell_m(x, y)
             c.create_cell_btn()
             c.btn_cell.grid(column=x, row=y)  # Grid Creation
