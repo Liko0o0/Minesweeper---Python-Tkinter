@@ -78,7 +78,7 @@ def medium_loop(mute, language):
 ## ----- Class to create the cell ----- ##
     class Cell_m:
         total = []
-        cell_nb_m = 86
+        cell_nb_m = 82
 
         def __init__(self, x, y):
             self.is_mine = False
@@ -215,8 +215,6 @@ def medium_loop(mute, language):
                     self.btn_cell.configure(fg="#ce4a4a", bg='#d3927b')
                 elif nb == 5:
                     self.btn_cell.configure(fg="#b25da6", bg='#d3927b')
-                    import Main
-                    Main.lucky = True
                 elif nb >= 6:
                     self.btn_cell.configure(bg='#d3927b')
                     import Main
@@ -275,7 +273,7 @@ def medium_loop(mute, language):
                 Main.menu(mute, language)
 
         def mine_number(self):
-            i = 14
+            i = 18
             for cell in Cell_m.total:
                 if cell.flag:
                     i -= 1
@@ -296,7 +294,7 @@ def medium_loop(mute, language):
             self.mine_number()
 
     def random_mine():
-        chosen_mine = random.sample(Cell_m.total, 14)
+        chosen_mine = random.sample(Cell_m.total, 18)
         for cell in chosen_mine:
             cell.is_mine = True
 
@@ -358,12 +356,12 @@ def medium_loop(mute, language):
     record.grid(row=0, column=0, columnspan=2, padx=15, pady=15, sticky=NE)
     record.config(font=("Small fonts", 20), bg='#E1CCCE', relief=RIDGE)
 
-    mine_nb = Label(window, text=" Bombes : 14 ")
+    mine_nb = Label(window, text=" Bombes : 18 ")
     mine_nb.grid(row=0, column=0, columnspan=2,
                  padx=15, pady=15, sticky=NW)
     mine_nb.config(font=("Small fonts", 17), bg='#E1CCCE', relief=RIDGE)
 
-    nb_remaining_cell = Label(window, text=" Cases restantes : 86 ")
+    nb_remaining_cell = Label(window, text=" Cases restantes : 82 ")
     nb_remaining_cell.grid(
         row=0, column=0, columnspan=2, padx=15, pady=60, sticky=NW)
     nb_remaining_cell.config(
@@ -372,7 +370,7 @@ def medium_loop(mute, language):
     if language == 'english':
         title.config(text=' - MEDIUM - ')
         mine_nb.config(text=' Mines : 14 ')
-        nb_remaining_cell.config(text=' Cell left : 86 ')
+        nb_remaining_cell.config(text=' Cell left : 82 ')
 
 ## ----- Lancement -----##
     for x in range(10):

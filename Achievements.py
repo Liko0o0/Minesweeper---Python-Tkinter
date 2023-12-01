@@ -56,7 +56,7 @@ def achievements_loop(mute, language, unlucky, reckless, quick, champion, lucky,
     if language == 'french':
         window.title('Démineur - Succes')
     else:
-        window.title('Démineur - Achievements')
+        window.title('Minesweeper - Achievements')
     window_center(844, 604)
     window.resizable(False, False)
     window.iconbitmap(icon)
@@ -281,10 +281,10 @@ def achievements_loop(mute, language, unlucky, reckless, quick, champion, lucky,
         if lucky:
             if language == 'french':
                 subtitle_lucky.configure(
-                    text=" Découvrir une case avec 5 bombes ou plus autour ", foreground="Black")
+                    text=" Découvrir une case avec 6 bombes ou plus autour ", foreground="Black")
             else:
                 subtitle_lucky.configure(
-                    text=" Discover a cell with 5 mines or more around ", foreground="Black")
+                    text=" Discover a cell with 6 mines or more around ", foreground="Black")
             update_achievement(ACHIEVEMENT_LUCKY, "Chanceux", "Lucky")
 
     def achivement_completionist():

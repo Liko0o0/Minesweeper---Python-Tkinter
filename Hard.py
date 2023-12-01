@@ -78,7 +78,7 @@ def hard_loop(mute, language):
 ## ----- Class to create the cell ----- ##
     class Cell_h:
         total = []
-        cell_nb_h = 123
+        cell_nb_h = 118
 
         def __init__(self, x, y):
             self.is_mine = False
@@ -215,8 +215,6 @@ def hard_loop(mute, language):
                     self.btn_cell.configure(fg="#ce4a4a", bg='#d3927b')
                 elif nb == 5:
                     self.btn_cell.configure(fg="#b25da6", bg='#d3927b')
-                    import Main
-                    Main.lucky = True
                 elif nb >= 6:
                     self.btn_cell.configure(bg='#d3927b')
                     import Main
@@ -274,7 +272,7 @@ def hard_loop(mute, language):
                 Main.menu(mute, language)
 
         def mine_number(self):
-            i = 21
+            i = 26
             for cell in Cell_h.total:
                 if cell.flag:
                     i -= 1
@@ -295,7 +293,7 @@ def hard_loop(mute, language):
             self.mine_number()
 
     def random_mine():
-        chosen_mine = random.sample(Cell_h.total, 21)
+        chosen_mine = random.sample(Cell_h.total, 26)
         for cell in chosen_mine:
             cell.is_mine = True
 
@@ -330,8 +328,8 @@ def hard_loop(mute, language):
     main = Canvas(window, width=1110, height=740, bg='#a39193')
     main.grid(row=0, column=0, columnspan=1, padx=3, pady=3)
 
-    border = Frame(window, bg='#f6e0b5', width=630, height=540)
-    border.place(x=244, y=152)
+    border = Frame(window, bg='#f6e0b5', width=620, height=530)
+    border.place(x=249, y=157)
 
     grid = Frame(window)
     grid.place(x=265, y=170)
@@ -357,12 +355,12 @@ def hard_loop(mute, language):
     record.grid(row=0, column=0, columnspan=2, padx=15, pady=15, sticky=NE)
     record.config(font=("Small fonts", 20), bg='#E1CCCE', relief=RIDGE)
 
-    mine_nb = Label(window, text=" Bombes : 21 ")
+    mine_nb = Label(window, text=" Bombes : 26 ")
     mine_nb.grid(row=0, column=0, columnspan=2,
                  padx=15, pady=15, sticky=NW)
     mine_nb.config(font=("Small fonts", 20), bg='#E1CCCE', relief=RIDGE)
 
-    nb_remaining_cell = Label(window, text=" Cases restantes : 123 ")
+    nb_remaining_cell = Label(window, text=" Cases restantes : 118 ")
     nb_remaining_cell.grid(
         row=0, column=0, columnspan=2, padx=15, pady=70, sticky=NW)
     nb_remaining_cell.config(
@@ -370,8 +368,8 @@ def hard_loop(mute, language):
 
     if language == 'english':
         titre.config(text=' - HARD - ')
-        mine_nb.config(text=' Mines : 21 ')
-        nb_remaining_cell.config(text=' Cell left : 123 ')
+        mine_nb.config(text=' Mines : 26 ')
+        nb_remaining_cell.config(text=' Cell left : 118 ')
 
 ## ----- Lancement -----##
     for x in range(12):
