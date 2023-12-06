@@ -30,7 +30,10 @@
 
 
 ## ⚙️ Version History
-- ### **[v1.1.2](https://github.com/Liko0o0/Minesweeper_Python-Tkinter/releases/tag/V1.1.1)**
+- ### **[v1.1.3](https://github.com/Liko0o0/Minesweeper_Python-Tkinter/releases/tag/V1.1.3)**
+  - Added a nigth theme
+
+- ### **[v1.1.2](https://github.com/Liko0o0/Minesweeper_Python-Tkinter/releases/tag/V1.1.2)**
   - Changed the cell sizes
     
 - ### **[v1.1.1](https://github.com/Liko0o0/Minesweeper_Python-Tkinter/releases/tag/V1.1.1)**
@@ -51,16 +54,15 @@
       
 ## 📸 Screens of the game
 
+![minesweeper 1](https://github.com/Liko0o0/Minesweeper_Python-Tkinter/assets/150863666/d6353984-82c7-4e5d-869e-579379ecd587)
 
-![minesweeper 1](https://github.com/Liko0o0/Minesweeper_Python-Tkinter/assets/150863666/bb05faeb-f630-4f58-9c41-76d168da7f70)
-
-![Capture](https://github.com/Liko0o0/Minesweeper_Python-Tkinter/assets/150863666/a63fac90-309f-479c-b953-187312e64232)
+![Minesweeper 2](https://github.com/Liko0o0/Minesweeper_Python-Tkinter/assets/150863666/649b90e1-dbd4-4afe-9149-07571bf33647)
 
 ![Minesweeper 3](https://github.com/Liko0o0/Minesweeper_Python-Tkinter/assets/150863666/44c4c581-a2d5-4450-b56c-92a0f6352bc1)
 
-![Minesweeper 4](https://github.com/Liko0o0/Minesweeper_Python-Tkinter/assets/150863666/8d72559b-56df-4d9e-b388-b8abc3495ad7)
+![Minesweeper 4](https://github.com/Liko0o0/Minesweeper_Python-Tkinter/assets/150863666/e5de4b19-6e21-49d8-a363-87bc0250b553)
 
-![minesweeper 5](https://github.com/Liko0o0/Minesweeper_Python-Tkinter/assets/150863666/743dd948-b75f-4d09-9cbf-f9932a758f83)
+![minesweeper 5](https://github.com/Liko0o0/Minesweeper_Python-Tkinter/assets/150863666/0131ffbb-df2f-4f37-b77e-0887521b47e9)
 
 ## 📚 Documentation Links
 
