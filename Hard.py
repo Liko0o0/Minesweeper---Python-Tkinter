@@ -30,7 +30,7 @@ h_win = False
 ## ----- Main program ----- ##
 
 
-def hard_loop(mute, language):
+def hard_loop(mute, theme, language):
 
     ## ----- Music and sound ----- ##
     mixer.init()
@@ -98,17 +98,25 @@ def hard_loop(mute, language):
             btn.bind('<Leave>', self.exit)
             btn.configure(activebackground="#D69881",
                           activeforeground="#D69881", cursor="dotbox")
+            if theme == 'dark':
+                btn.config(bg="#4b3853")
+                btn.config(activebackground="#2D2131",
+                           activeforeground="#2D2131")
             self.btn_cell = btn
 
         def enter(self, event):  # Event come from the bind method
             global game_over
             if not self.is_discovered and not self.flag and not game_over:
                 self.btn_cell.configure(bg="#996367")
+                if theme == "dark":
+                    self.btn_cell.configure(bg="#3C2D42")
 
         def exit(self, event):  # Event come from the bind method
             global game_over
             if not self.is_discovered and not self.flag and not game_over:
                 self.btn_cell.configure(bg="#aa6f73")
+                if theme == "dark":
+                    self.btn_cell.configure(bg="#4b3853")
 
         def left_click(self, event):  # Event come from the bind method
             if not self.flag:
@@ -160,12 +168,12 @@ def hard_loop(mute, language):
                                 title="Play again", message="Do you want to play again ?")
                         if play_again == True:
                             window.destroy()
-                            hard_loop(mute, language)
+                            hard_loop(mute, theme, language)
                         else:
                             import Main
                             Main.music_playing = 0
                             window.destroy()
-                            Main.menu(mute, language)
+                            Main.menu(mute, theme, language)
 
         def collect_cell_coordinate(self, x, y):
             for cell in Cell_h.total:
@@ -192,7 +200,7 @@ def hard_loop(mute, language):
                 nb = self.mine_around()
                 self.btn_cell.configure(text=nb)
                 if nb == 0:
-                    # Used to temporarily store a box and therefore avoid recursion limit problems
+                    # Used to temporarily store a cell and therefore avoid recursion limit problems
                     L = [self]
                     while L:     # Pile=False if empty so stop the loop
                         current_cell = L[0]
@@ -200,6 +208,8 @@ def hard_loop(mute, language):
                         current_cell.is_discovered = True
                         current_cell.btn_cell.configure(
                             text=" ", bg='#eea990')
+                        if theme == 'dark':
+                            current_cell.btn_cell.configure(bg="#3E275A")
                         for cell in current_cell.cell_around():
                             if not cell.is_discovered:
                                 cell.show_cell()
@@ -219,6 +229,8 @@ def hard_loop(mute, language):
                     self.btn_cell.configure(bg='#d3927b')
                     import Main
                     Main.lucky = True
+                if theme == "dark" and nb != 0:
+                    self.btn_cell.configure(bg='#291048')
 
                 Cell_h.cell_nb_h -= 1
                 if language == 'french':
@@ -264,12 +276,12 @@ def hard_loop(mute, language):
                     title="Play again", message="Do you want to play again ?")
             if play_again == True:
                 window.destroy()
-                hard_loop(mute, language)
+                hard_loop(mute, theme, language)
             else:
                 import Main
                 Main.music_playing = 0
                 window.destroy()
-                Main.menu(mute, language)
+                Main.menu(mute, theme, language)
 
         def mine_number(self):
             i = 26
@@ -325,8 +337,8 @@ def hard_loop(mute, language):
         return f"{m},{s}"
 
 ## ----- Canvas creation -----##
-    main = Canvas(window, width=1110, height=740, bg='#a39193')
-    main.grid(row=0, column=0, columnspan=1, padx=3, pady=3)
+    game_background = Canvas(window, width=1115, height=745, bg='#a39193')
+    game_background.grid(row=0, column=0, columnspan=1)
 
     border = Frame(window, bg='#f6e0b5', width=620, height=530)
     border.place(x=249, y=157)
@@ -335,9 +347,9 @@ def hard_loop(mute, language):
     grid.place(x=265, y=170)
 
 ## ---- Information creation -----##
-    titre = Label(window, text=" - DIFFICILE - ")
-    titre.grid(row=0, column=0, columnspan=2, padx=0, pady=20, sticky=N)
-    titre.config(font=("Small fonts", 35, "bold"),
+    title = Label(window, text=" - DIFFICILE - ")
+    title.grid(row=0, column=0, columnspan=2, padx=0, pady=20, sticky=N)
+    title.config(font=("Small fonts", 35, "bold"),
                  bg='#E1CCCE', relief=RIDGE, foreground="#b22222")
     chronometre = Label(window, text=" ")
     chronometre.grid(row=0, column=0, columnspan=2,
@@ -367,9 +379,19 @@ def hard_loop(mute, language):
         font=("Small fonts", 20), bg='#E1CCCE', relief=RIDGE)
 
     if language == 'english':
-        titre.config(text=' - HARD - ')
+        title.config(text=' - HARD - ')
         mine_nb.config(text=' Mines : 26 ')
         nb_remaining_cell.config(text=' Cell left : 118 ')
+
+    if theme == 'dark':
+        game_background.config(bg="#261C2C", width=1120,
+                               height=750, highlightthickness=0)
+        border.config(bg="#3B2B40")
+        title.config(bg="#3E2C41", fg="#b22222")
+        chronometre .config(bg="#3E2C41", fg='#e2d8c9')
+        record .config(bg="#3E2C41", fg='#e2d8c9')
+        mine_nb .config(bg="#3E2C41", fg='#e2d8c9')
+        nb_remaining_cell .config(bg="#3E2C41", fg='#e2d8c9')
 
 ## ----- Lancement -----##
     for x in range(12):

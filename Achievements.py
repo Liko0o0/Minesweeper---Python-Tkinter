@@ -41,7 +41,7 @@ def write_achievement(succes):
 ## ----- Main program ----- ##
 
 
-def achievements_loop(mute, language, unlucky, reckless, quick, champion, lucky, completionist):
+def achievements_loop(mute, theme, language, unlucky, reckless, quick, champion, lucky, completionist):
 
     # Allows to center the window for all screen dimensions
     def window_center(width, heigth):
@@ -66,13 +66,17 @@ def achievements_loop(mute, language, unlucky, reckless, quick, champion, lucky,
         button_click.play()
         Main.music_playing += 1
         window.destroy()
-        Main.menu(mute, language)
+        Main.menu(mute, theme, language)
 
     def enter(name, size, event):  # Event come from the bind method
         name.configure(bg="#CAB7B9", font=("Small fonts", size+2))
+        if theme == 'dark':
+            name.configure(bg="#514154", font=("Small fonts", size+2))
 
     def exit(name, size, event):  # Event come from the bind method
         name.configure(bg="#E1CCCE", font=("Small fonts", size))
+        if theme == 'dark':
+            name.configure(bg="#3E2C41", font=("Small fonts", size))
 
 ## ----- Canvas creation -----##
     main = Canvas(window, width=840, height=600, bg='#a39193')
@@ -125,10 +129,10 @@ def achievements_loop(mute, language, unlucky, reckless, quick, champion, lucky,
         "Small fonts", 14, "bold"), bg='#E1CCCE', relief=RIDGE, foreground="#766B65")
 
     # Win in - 15sec on easy / 45sec on medium / 1min10 on difficult
-    tilte_quick = Label(window, text=" Expéditif ")
-    tilte_quick.grid(row=0, column=0, columnspan=1,
+    title_quick = Label(window, text=" Expéditif ")
+    title_quick.grid(row=0, column=0, columnspan=1,
                      pady=236, padx=68, sticky=NW)
-    tilte_quick.configure(
+    title_quick.configure(
         font=("Small fonts", 14, "bold"), bg='#E1CCCE', relief=RIDGE)
     subtitle_quick = Label(
         window, text="                                                  ?                                                  ")
@@ -143,11 +147,11 @@ def achievements_loop(mute, language, unlucky, reckless, quick, champion, lucky,
                         pady=286, padx=61, sticky=NW)
     title_reckless.configure(
         font=("Small fonts", 14, "bold"), bg='#E1CCCE', relief=RIDGE)
-    subtilte_reckless = Label(
+    subtitle_reckless = Label(
         window, text="                                                  ?                                                  ")
-    subtilte_reckless.grid(
+    subtitle_reckless.grid(
         row=0, column=0, columnspan=1, pady=286, padx=240, sticky=NW)
-    subtilte_reckless.configure(font=(
+    subtitle_reckless.configure(font=(
         "Small fonts", 14, "bold"), bg='#E1CCCE', relief=RIDGE, foreground="#766B65")
 
     # Win 3 times in a row
@@ -220,8 +224,8 @@ def achievements_loop(mute, language, unlucky, reckless, quick, champion, lucky,
         title_lucky.config(text=' Lucky ')
         title_completionist.config(
             text=' Completionist ', font=("Small fonts", 13, "bold"))
-        tilte_quick.config(text=' Quick ')
-        tilte_quick.grid(padx=44)
+        title_quick.config(text=' Quick ')
+        title_quick.grid(padx=44)
         title_collector.config(text=' Collector ')
         btn_back.config(text="BACK")
 
@@ -260,10 +264,10 @@ def achievements_loop(mute, language, unlucky, reckless, quick, champion, lucky,
     def achivement_reckless():
         if reckless:
             if language == 'french':
-                subtilte_reckless.configure(
+                subtitle_reckless.configure(
                     text=" Perdre 10 fois d'affilée ", foreground="Black")
             else:
-                subtilte_reckless.configure(
+                subtitle_reckless.configure(
                     text=" Lose 10 times in a row ", foreground="Black")
             update_achievement(ACHIEVEMENT_RECKLESS, "Temeraire", "Reckless")
 
@@ -314,11 +318,11 @@ def achievements_loop(mute, language, unlucky, reckless, quick, champion, lucky,
                 text.configure(foreground='black')
                 Main.mixer.music.unpause()
 
-        subtitle_flash = [subtitle_unlucky, subtitle_quick, subtilte_reckless,
+        subtitle_flash = [subtitle_unlucky, subtitle_quick, subtitle_reckless,
                           subtitle_champion, subtitle_lucky, subtitle_completionist,
                           subtitle_collector]
 
-        title_flash = [title_unlucky, tilte_quick, title_reckless,
+        title_flash = [title_unlucky, title_quick, title_reckless,
                        title_champion, title_lucky, title_completionist, title_collector]
 
         colors = [
@@ -352,3 +356,23 @@ def achievements_loop(mute, language, unlucky, reckless, quick, champion, lucky,
     achivement_lucky()
     achivement_completionist()
     achievement_collector()
+
+    if theme == 'dark':
+        main.config(bg="#261C2C", width=844, height=604, highlightthickness=0)
+        title.config(bg="#3E2C41", fg='#e2d8c9')
+        subtitle .config(bg="#3E2C41", fg='#8806ce')
+        title_unlucky.config(bg="#3E2C41", fg='#e2d8c9')
+        title_reckless.config(bg="#3E2C41", fg='#e2d8c9')
+        title_champion.config(bg="#3E2C41", fg='#e2d8c9')
+        title_lucky.config(bg="#3E2C41", fg='#e2d8c9')
+        title_completionist.config(bg="#3E2C41", fg='#e2d8c9')
+        title_quick.config(bg="#3E2C41", fg='#e2d8c9')
+        title_collector.config(bg="#3E2C41", fg='#e2d8c9')
+        subtitle_unlucky.config(bg="#3E2C41", fg='#e2d8c9')
+        subtitle_reckless.config(bg="#3E2C41", fg='#e2d8c9')
+        subtitle_champion.config(bg="#3E2C41", fg='#e2d8c9')
+        subtitle_lucky.config(bg="#3E2C41", fg='#e2d8c9')
+        subtitle_completionist.config(bg="#3E2C41", fg='#e2d8c9')
+        subtitle_quick.config(bg="#3E2C41", fg='#e2d8c9')
+        subtitle_collector.config(bg="#3E2C41", fg='#e2d8c9')
+        btn_back.config(bg="#3E2C41", fg='#e2d8c9', activebackground="#312334")

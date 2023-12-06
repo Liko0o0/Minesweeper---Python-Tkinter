@@ -30,7 +30,7 @@ m_win = False
 ## ----- Main program ----- ##
 
 
-def medium_loop(mute, language):
+def medium_loop(mute, theme, language):
 
     ## ----- Music and sound ----- ##
     mixer.init()
@@ -98,17 +98,25 @@ def medium_loop(mute, language):
             btn.bind('<Leave>', self.exit)
             btn.configure(activebackground="#D69881",
                           activeforeground="#D69881", cursor="dotbox")
+            if theme == 'dark':
+                btn.config(bg="#4b3853")
+                btn.config(activebackground="#2D2131",
+                           activeforeground="#2D2131")
             self.btn_cell = btn
 
         def enter(self, event):  # Event come from the bind method
             global game_over
             if not self.is_discovered and not self.flag and not game_over:
                 self.btn_cell.configure(bg="#996367")
+                if theme == "dark":
+                    self.btn_cell.configure(bg="#3C2D42")
 
         def exit(self, event):  # Event come from the bind method
             global game_over
             if not self.is_discovered and not self.flag and not game_over:
                 self.btn_cell.configure(bg="#aa6f73")
+                if theme == "dark":
+                    self.btn_cell.configure(bg="#4b3853")
 
         def left_click(self, event):  # Event come from the bind method
             if not self.flag:
@@ -160,12 +168,12 @@ def medium_loop(mute, language):
                                 title="Play again", message="Do you want to play again ?")
                         if play_again == True:
                             window.destroy()
-                            medium_loop(mute, language)
+                            medium_loop(mute, theme, language)
                         else:
                             import Main
                             window.destroy()
                             Main.music_playing = 0
-                            Main.menu(mute, language)
+                            Main.menu(mute, theme, language)
 
         def collect_cell_coordinate(self, x, y):
             for cell in Cell_m.total:
@@ -200,6 +208,8 @@ def medium_loop(mute, language):
                         current_cell.is_discovered = True
                         current_cell.btn_cell.configure(
                             text=" ", bg='#eea990')
+                        if theme == 'dark':
+                            current_cell.btn_cell.configure(bg="#3E275A")
                         for cell in current_cell.cell_around():
                             if not cell.is_discovered:
                                 cell.show_cell()
@@ -219,6 +229,8 @@ def medium_loop(mute, language):
                     self.btn_cell.configure(bg='#d3927b')
                     import Main
                     Main.lucky = True
+                if theme == "dark" and nb != 0:
+                    self.btn_cell.configure(bg='#291048')
 
                 Cell_m.cell_nb_m -= 1
                 if language == 'french':
@@ -265,12 +277,12 @@ def medium_loop(mute, language):
                     title="Play again", message="Do you want to play again ?")
             if play_again == True:
                 window.destroy()
-                medium_loop(mute, language)
+                medium_loop(mute, theme, language)
             else:
                 import Main
                 Main.music_playing = 0
                 window.destroy()
-                Main.menu(mute, language)
+                Main.menu(mute, theme, language)
 
         def mine_number(self):
             i = 18
@@ -326,8 +338,8 @@ def medium_loop(mute, language):
         return f"{m},{s}"
 
 ## ----- Canvas creation -----##
-    main = Canvas(window, width=850, height=590, bg='#a39193')
-    main.grid(row=0, column=0, columnspan=1, padx=3, pady=3)
+    game_background = Canvas(window, width=855, height=595, bg='#a39193')
+    game_background.grid(row=0, column=0, columnspan=1)
 
     border = Frame(window, bg='#f6e0b5', width=522, height=448)
     border.place(x=175, y=113)
@@ -371,6 +383,16 @@ def medium_loop(mute, language):
         title.config(text=' - MEDIUM - ')
         mine_nb.config(text=' Mines : 14 ')
         nb_remaining_cell.config(text=' Cell left : 82 ')
+
+    if theme == 'dark':
+        game_background.config(bg="#261C2C", width=860,
+                               height=600, highlightthickness=0)
+        border.config(bg="#3B2B40")
+        title.config(bg="#3E2C41", fg="#CE8700")
+        chronometre .config(bg="#3E2C41", fg='#e2d8c9')
+        record .config(bg="#3E2C41", fg='#e2d8c9')
+        mine_nb .config(bg="#3E2C41", fg='#e2d8c9')
+        nb_remaining_cell .config(bg="#3E2C41", fg='#e2d8c9')
 
 ## ----- Lancement -----##
     for x in range(10):
