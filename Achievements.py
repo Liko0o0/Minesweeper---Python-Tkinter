@@ -245,60 +245,84 @@ def achievements_loop(mute, theme, language, unlucky, reckless, quick, champion,
         if unlucky:
             if language == 'french':
                 subtitle_unlucky.configure(
-                    text=" Faire exploser une bombe au premier clique ", foreground="Black")
-            else:
+                    text=" Faire exploser une bombe au premier clique ")
+            elif language == 'english':
                 subtitle_unlucky.configure(
-                    text=" Detonate a bomb at the first click ", foreground="Black")
+                    text=" Detonate a bomb at the first click ")
+            if theme == 'light':
+                subtitle_unlucky.configure(foreground="black")
+            elif theme == 'dark':
+                subtitle_unlucky.configure(foreground="#e2d8c9")
             update_achievement(ACHIEVEMENT_UNLUCKY, "Malchanceux", "Unlucky")
 
     def achivement_quick():
         if quick:
+            if theme == 'light':
+                subtitle_quick.configure(foreground="black")
+            else:
+                subtitle_quick.configure(foreground="#e2d8c9")
             if language == 'french':
                 subtitle_quick.configure(
-                    text=" Gagner en moins de (15s-Facile/45s-Moyen/1m-Difficile) ", foreground="Black")
+                    text=" Gagner en moins de (15s-Facile/45s-Moyen/1m-Difficile) ")
             else:
                 subtitle_quick.configure(
-                    text=" Win in less than (15s-Easy/45s-Medium/1m-Hard) ", foreground="Black")
+                    text=" Win in less than (15s-Easy/45s-Medium/1m-Hard) ")
             update_achievement(ACHIEVEMENT_QUICK, "Expeditif", "Quick")
 
     def achivement_reckless():
         if reckless:
+            if theme == 'light':
+                subtitle_reckless.configure(foreground="black")
+            else:
+                subtitle_reckless.configure(foreground="#e2d8c9")
             if language == 'french':
                 subtitle_reckless.configure(
-                    text=" Perdre 10 fois d'affilée ", foreground="Black")
+                    text=" Perdre 10 fois d'affilée ")
             else:
                 subtitle_reckless.configure(
-                    text=" Lose 10 times in a row ", foreground="Black")
+                    text=" Lose 10 times in a row ")
             update_achievement(ACHIEVEMENT_RECKLESS, "Temeraire", "Reckless")
 
     def achivement_champion():
         if champion:
+            if theme == 'light':
+                subtitle_champion.configure(foreground="Black")
+            else:
+                subtitle_champion.configure(foreground="#e2d8c9")
             if language == 'french':
                 subtitle_champion.configure(
-                    text=" Gagner 3 fois d'affilée ", foreground="Black")
+                    text=" Gagner 3 fois d'affilée ")
             else:
                 subtitle_champion.configure(
-                    text=" Win 3 times in a row ", foreground="Black")
+                    text=" Win 3 times in a row ")
             update_achievement(ACHIEVEMENT_CHAMPION, "Champion", "Champion")
 
     def achivement_lucky():
         if lucky:
+            if theme == 'light':
+                subtitle_lucky.configure(foreground="Black")
+            else:
+                subtitle_lucky.configure(foreground="#e2d8c9")
             if language == 'french':
                 subtitle_lucky.configure(
-                    text=" Découvrir une case avec 6 bombes ou plus autour ", foreground="Black")
+                    text=" Découvrir une case avec 6 bombes ou plus autour ")
             else:
                 subtitle_lucky.configure(
-                    text=" Discover a cell with 6 mines or more around ", foreground="Black")
+                    text=" Discover a cell with 6 mines or more around ")
             update_achievement(ACHIEVEMENT_LUCKY, "Chanceux", "Lucky")
 
     def achivement_completionist():
         if completionist:
+            if theme == 'light':
+                subtitle_completionist.configure(foreground="Black")
+            else:
+                subtitle_completionist.configure(foreground="#e2d8c9")
             if language == 'french':
                 subtitle_completionist.configure(
-                    text=" Gagner une partie dans chaque difficulté ", foreground="Black")
+                    text=" Gagner une partie dans chaque difficulté ")
             else:
                 subtitle_completionist.configure(
-                    text=" Win a game in each difficulty ", foreground="Black")
+                    text=" Win a game in each difficulty ")
             update_achievement(ACHIEVEMENT_COMPLETIONIST,
                                "Completionniste", "Complementionist")
 
@@ -339,35 +363,39 @@ def achievements_loop(mute, theme, language, unlucky, reckless, quick, champion,
 
     def achievement_collector():
         if completionist and lucky and champion and reckless and quick and unlucky:
+            if theme == 'light':
+                subtitle_collector.configure(foreground="Black")
+            else:
+                subtitle_collector.configure(foreground="#e2d8c9")
             if language == 'french':
                 subtitle_collector.configure(
-                    text=" Débloquer tous les succès ! ", foreground="Black")
+                    text=" Débloquer tous les succès ! ")
             else:
                 subtitle_collector.configure(
-                    text=" Unlock all the achievements ! ", foreground="Black")
+                    text=" Unlock all the achievements ! ")
             update_achievement(ACHIEVEMENT_COLLECTOR,
                                "Collectionneur", "Collector")
             GG()
-            
+
     if theme == 'dark':
-            main.config(bg="#261C2C", width=844, height=604, highlightthickness=0)
-            title.config(bg="#3E2C41", fg='#e2d8c9')
-            subtitle .config(bg="#3E2C41", fg='#8806ce')
-            title_unlucky.config(bg="#3E2C41", fg='#e2d8c9')
-            title_reckless.config(bg="#3E2C41", fg='#e2d8c9')
-            title_champion.config(bg="#3E2C41", fg='#e2d8c9')
-            title_lucky.config(bg="#3E2C41", fg='#e2d8c9')
-            title_completionist.config(bg="#3E2C41", fg='#e2d8c9')
-            title_quick.config(bg="#3E2C41", fg='#e2d8c9')
-            title_collector.config(bg="#3E2C41", fg='#e2d8c9')
-            subtitle_unlucky.config(bg="#3E2C41", fg='#e2d8c9')
-            subtitle_reckless.config(bg="#3E2C41", fg='#e2d8c9')
-            subtitle_champion.config(bg="#3E2C41", fg='#e2d8c9')
-            subtitle_lucky.config(bg="#3E2C41", fg='#e2d8c9')
-            subtitle_completionist.config(bg="#3E2C41", fg='#e2d8c9')
-            subtitle_quick.config(bg="#3E2C41", fg='#e2d8c9')
-            subtitle_collector.config(bg="#3E2C41", fg='#e2d8c9')
-            btn_back.config(bg="#3E2C41", fg='#e2d8c9', activebackground="#312334")
+        main.config(bg="#261C2C", width=844, height=604, highlightthickness=0)
+        title.config(bg="#3E2C41", fg='#e2d8c9')
+        subtitle .config(bg="#3E2C41", fg='#8806ce')
+        title_unlucky.config(bg="#3E2C41", fg='#e2d8c9')
+        title_reckless.config(bg="#3E2C41", fg='#e2d8c9')
+        title_champion.config(bg="#3E2C41", fg='#e2d8c9')
+        title_lucky.config(bg="#3E2C41", fg='#e2d8c9')
+        title_completionist.config(bg="#3E2C41", fg='#e2d8c9')
+        title_quick.config(bg="#3E2C41", fg='#e2d8c9')
+        title_collector.config(bg="#3E2C41", fg='#e2d8c9')
+        subtitle_unlucky.config(bg="#3E2C41")
+        subtitle_reckless.config(bg="#3E2C41")
+        subtitle_champion.config(bg="#3E2C41")
+        subtitle_lucky.config(bg="#3E2C41")
+        subtitle_completionist.config(bg="#3E2C41")
+        subtitle_quick.config(bg="#3E2C41",)
+        subtitle_collector.config(bg="#3E2C41")
+        btn_back.config(bg="#3E2C41", fg='#e2d8c9', activebackground="#312334")
 
     achievement_unlucky()
     achivement_quick()
@@ -376,5 +404,3 @@ def achievements_loop(mute, theme, language, unlucky, reckless, quick, champion,
     achivement_lucky()
     achivement_completionist()
     achievement_collector()
-
-    

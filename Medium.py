@@ -302,6 +302,8 @@ def medium_loop(mute, theme, language):
                     self.flag = True
                 else:
                     self.btn_cell.configure(bg="#aa6f73", text="")
+                    if theme == 'dark':
+                        self.btn_cell.configure(bg="#4b3853", text="")
                     self.flag = False
             self.mine_number()
 
