@@ -32,21 +32,33 @@
 ## ⚙️ Version History
 - ### **[v1.1.3](https://github.com/Liko0o0/Minesweeper_Python-Tkinter/releases/tag/V1.1.3)**
   - Added a nigth theme
+    
+   ![Capture](https://github.com/Liko0o0/Minesweeper_Python-Tkinter/assets/150863666/1bdb6458-b681-43a6-8a04-b956e898a189)
 
 - ### **[v1.1.2](https://github.com/Liko0o0/Minesweeper_Python-Tkinter/releases/tag/V1.1.2)**
   - Changed the cell sizes
-    
+
+  ![Capture](https://github.com/Liko0o0/Minesweeper_Python-Tkinter/assets/150863666/b2fba582-7c5b-481d-9264-c15ed368aa60)
+
 - ### **[v1.1.1](https://github.com/Liko0o0/Minesweeper_Python-Tkinter/releases/tag/V1.1.1)**
   - Made the numbers better readable
     
+  ![Capture](https://github.com/Liko0o0/Minesweeper_Python-Tkinter/assets/150863666/4453bfd8-8522-4523-959a-9cc7cbee0504)
+
 - ### **[v1.1.0 - OPTION](https://github.com/Liko0o0/Minesweeper_Python-Tkinter/releases/tag/V1.1.0)**
     - Added option to switch between English and French language
     - Added option to mute musics
+    
+    ![Capture](https://github.com/Liko0o0/Minesweeper_Python-Tkinter/assets/150863666/4172c8b6-eb8b-4fa9-91ec-d0d1467c17be) ![Capture](https://github.com/Liko0o0/Minesweeper_Python-Tkinter/assets/150863666/ec0fe491-7868-402b-9bf3-44b5a00b86f1)
+
       
 - ### **[v1.0.1 - HOTFIXES](https://github.com/Liko0o0/Minesweeper_Python-Tkinter/releases/tag/V1.0.1)**
     - Fixed a bug with time saving
     - Added achievements saving
     - Added a new icon to the .EXE
+    
+    ![Capture](https://github.com/Liko0o0/Minesweeper_Python-Tkinter/assets/150863666/2359594a-3298-4550-b8e7-f04612340ba9) ![Capture](https://github.com/Liko0o0/Minesweeper_Python-Tkinter/assets/150863666/9bc3c8af-12c7-4c85-a6dc-172bd98d314d)
+
   
 - ### **[v1.0.0 - RELEASE](https://github.com/Liko0o0/Minesweeper_Python-Tkinter/releases/tag/V1.0.0)**
     - Initial release
